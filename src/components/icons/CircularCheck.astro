@@ -1,0 +1,21 @@
+---
+interface Props {
+    width: string,
+    height: string,
+    color: string
+}
+
+const { width, height, color } = Astro.props as Props;
+---
+
+<svg viewBox="-4.8 -4.8 33.60 33.60" fill="none" xmlns="http://www.w3.org/2000/svg" width={width} height={height}>
+    <!-- <g id="SVGRepo_bgCarrier" stroke-width="0" transform="translate(0.6000000000000014,0.6000000000000014), scale(0.95)">
+        <rect x="-4.8" y="-4.8" width="33.60" height="33.60" rx="16.8" fill="#eeee" stroke-width="0"></rect>
+    </g>
+
+    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g> -->
+    
+    <g id="SVGRepo_iconCarrier">
+        <path d="M4 12.6111L8.92308 17.5L20 6.5" stroke={color} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </g>
+</svg>

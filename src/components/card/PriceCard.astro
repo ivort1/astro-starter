@@ -1,0 +1,43 @@
+---
+import CircularCheck from '../icons/CircularCheck.astro';
+
+interface Props {
+    bg: string;
+    badge?: string;
+    subscriptionType: "Annual" | "Monthly";
+    price: string;
+    per: "year" | "month";
+    subheading?: string;
+    pill?: string;
+    features?: string[];
+}
+
+const { bg, badge, subscriptionType, price, per, subheading, pill, features } = Astro.props as Props;
+---
+
+<div class=`${bg} text-text relative flex flex-col items-center justify-center flex-1 p-4 pb-8 sm:p-8 lg:p-16`>
+    { badge && <p class="absolute bg-foreground text-sm text-text font-bold top-8 py-0.5 px-2 tracking-wider rounded uppercase">{badge}</p> }
+    <div class="text-text text-xs font-semibold uppercase">{subscriptionType} subscription</div>
+    <div class="text-5xl font-semibold">${price}<span class="text-base font-normal"> /{per}</span></div>
+    { subheading && <div class="text-foreground">{subheading}</div> }
+    {
+        pill && <div class="bg-teal-100 text-xs font-semibold text-accent px-3 py-1 rounded-3xl border-2 border-accent">{pill}</div>
+    }
+    {
+        features &&
+        <div>
+            {
+                features.map(feature => (
+                    <div class="flex items-center gap-2">
+                        <CircularCheck width="2rem" height="2rem" color="#EAEAEA"/>
+                        <div>{feature}</div>
+                    </div>
+                ))
+            }
+        </div>
+
+    }
+    <button class="bg-foreground text-text px-8 py-3 mt-6 text-lg font-semibold sm:mt-12">
+    Get started
+    </button>
+</div>

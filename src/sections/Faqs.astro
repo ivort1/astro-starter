@@ -1,0 +1,32 @@
+---
+// JSON data
+import Faq from "../components/atoms/Faq.astro";
+import data from "../database.json";
+
+interface Faq {
+  question: string;
+  answer: string;
+}
+
+const faqs: Faq[] = data.faqs;
+---
+
+<section>
+  <div class="py-2 sm:py-12">
+    <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+      <!-- Header left aligned always -->
+      <div class="max-w-2xl">
+        <p class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-text sm:text-5xl lg:text-balance">
+          Frequently Asked Questions
+        </p>
+      </div>
+
+      <!-- FAQ list with horizontal dividers -->
+      <div class="w-full mt-12 divide-y divide-gray-700">
+        {faqs.map(({ question, answer }) => (
+          <Faq name="faq" question={question} answer={answer} />
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

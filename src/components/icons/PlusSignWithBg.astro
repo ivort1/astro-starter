@@ -1,0 +1,43 @@
+---
+interface Props {
+  width: string;
+  height: string;
+  plusColor: string;
+  backgroundColor: string;
+  class?: string;
+}
+
+const { width, height, plusColor, backgroundColor, class: classes } = Astro.props as Props;
+---
+<svg
+  width={width}
+  height={height}
+  viewBox="-140.8 -140.8 537.60 537.60"
+  id="Flat"
+  xmlns="http://www.w3.org/2000/svg"
+  transform="rotate(0)"
+  stroke="#ffffff"
+  stroke-width="8.96"
+  class={classes}
+>
+  <!-- Background Circle -->
+  <g id="SVGRepo_bgCarrier" stroke-width="0" transform="translate(6.4,6.4) scale(0.95)">
+    <rect
+      x="-140.8"
+      y="-140.8"
+      width="537.60"
+      height="537.60"
+      rx="268.8"
+      fill={backgroundColor}
+      stroke-width="0"
+    ></rect>
+  </g>
+  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.512"></g>
+  <!-- Plus Sign -->
+  <g id="SVGRepo_iconCarrier">
+    <path
+      d="M224,128a7.99977,7.99977,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A7.99977,7.99977,0,0,1,224,128Z"
+      fill={plusColor}
+    ></path>
+  </g>
+</svg>

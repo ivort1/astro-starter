@@ -1,0 +1,28 @@
+---
+// Faq.astro
+import PlusSignWithBg from '../icons/PlusSignWithBg.astro';
+
+interface Props {
+  name?: string;
+  question: string;
+  answer: string;
+}
+
+const { name, question, answer } = Astro.props as Props;
+---
+
+<details name={name} class="group py-8 px-4 w-full">
+  <summary class="cursor-pointer flex items-center justify-between gap-3 w-full">
+    <h2 class="text-white font-bold">{question}</h2>
+    <span class="transform transition-transform duration-150 ease-in-out group-[&[open]]:rotate-45">
+      <PlusSignWithBg
+        width="2rem"
+        height="2rem"
+        plusColor="#FFFFFF"
+        backgroundColor="#111111"
+      />
+    </span>
+  </summary>
+  
+  <p class="text-gray-400 pt-2">{answer}</p>
+</details>

@@ -1,0 +1,122 @@
+---
+// Custom components
+import Feature from "../components/atoms/Feature.astro";
+
+import DashArrowDown from "../components/icons/DashArrowDown.astro";
+
+// JSON data
+import data from "../database.json";
+
+interface Feature {
+  icon: string;
+  feature: string;
+  description: string;
+}
+
+const features: Feature[] = data.features;
+---
+<section class="flex flex-col items-center justify-center gap-2">
+  <!-- Pricing -->
+  <div class="relative isolate px-6 py-2 sm:py-12 lg:px-8">
+    <div class="absolute inset-x-0 -top-3 -z-10 transform-gpu overflow-hidden px-36 blur-3xl" aria-hidden="true">
+      <div class="mx-auto aspect-1155/678 w-288.75 bg-linear-to-tr from-[#184700] to-accent opacity-30" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+    </div>
+    <div class="mx-auto max-w-4xl text-center">
+      <h2 class="text-base/7 font-semibold text-accent">Pricing</h2>
+      <p class="mt-2 text-5xl font-semibold tracking-tight text-balance text-text sm:text-6xl">Choose the right plan for you</p>
+    </div>
+    <p class="mx-auto mt-6 max-w-2xl text-center text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">Choose an affordable plan that’s packed with the best features for engaging your audience, creating customer loyalty, and driving sales.</p>
+
+    <div class="mx-auto mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-4xl lg:grid-cols-2">
+      <!-- Annual subscription-->
+      <div class="border-2 border-gray-800 rounded-3xl rounded-t-3xl bg-background p-8 ring-1 ring-gray-900/10 sm:mx-8 sm:rounded-b-none sm:p-10 lg:mx-0 lg:rounded-tr-none lg:rounded-bl-3xl">
+        <h3 id="tier-hobby" class="text-base/7 font-semibold text-accent text-balance">Annual subscription <span class="sm:ml-2 text-xs bg-teal-100 font-semibold text-accent px-3 py-1 rounded-3xl border-2 border-accent">Save $600!</span></h3>
+        <p class="mt-4 flex items-baseline gap-x-2">
+          <span class="text-5xl font-semibold tracking-tight text-white">$3000</span>
+          <span class="text-base text-gray-400">/year</span>
+        </p>
+        <p class="mt-6 text-base/7 text-gray-400">The best value – equates to $250 per month.</p>
+        <ul role="list" class="mt-8 space-y-3 text-sm/6 text-text sm:mt-10">
+          <li class="flex gap-x-3">
+            <svg class="h-6 w-5 flex-none text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+            </svg>
+            One-time annual payment
+          </li>
+          <li class="flex gap-x-3">
+            <svg class="h-6 w-5 flex-none text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+            </svg>
+            Cancel anytime after 12 months
+          </li>
+        </ul>
+        <a href="#" aria-describedby="tier-hobby" class="mt-8 block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold bg-foreground text-text sm:mt-10">Get started today</a>
+      </div>
+
+      <!-- Monthly subscription-->
+      <div class="relative rounded-3xl bg-foreground p-8 shadow-2xl ring-1 ring-gray-900/10 sm:p-10">
+        <p class="absolute bg-accent text-sm text-text font-bold -top-1 py-0.5 px-2 tracking-wider rounded">Popular 🔥</p>
+        <h3 id="tier-enterprise" class="text-base/7 font-semibold text-accent">Monthly subscription</h3>
+        <p class="mt-4 flex items-baseline gap-x-2">
+          <span class="text-5xl font-semibold tracking-tight text-white">$300</span>
+          <span class="text-base text-gray-400">/month</span>
+        </p>
+        <p class="mt-6 text-base/7 text-gray-400">Our best-selling plan.</p>
+        <ul role="list" class="mt-8 space-y-3 text-sm/6 text-text sm:mt-10">
+          <li class="flex gap-x-3">
+            <svg class="h-6 w-5 flex-none text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+            </svg>
+            <span>No upfront fees with <span class="font-bold underline">$0 down</span></span>
+          </li>
+          <li class="flex gap-x-3">
+            <svg class="h-6 w-5 flex-none text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+            </svg>
+            Cancel anytime after 12 months
+          </li>
+          <li class="flex gap-x-3">
+            <svg class="h-6 w-5 flex-none text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+            </svg>
+            Month-to-month afterwards
+          </li>
+        </ul>
+        <a href="#" aria-describedby="tier-enterprise" class="mt-8 block rounded-md bg-accent px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:mt-10">Get started today</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="flex flex-row items-center justify-center gap-2">
+    <span class="rotate-90">
+      <DashArrowDown width="15rem" height="15rem" color="#00BFA6"/>
+    </span>
+    <h2 class="text-base/7 font-semibold text-accent">Everything you get ✨</h2>
+  </div>
+
+  <!-- Features -->
+  <div class="py-2 sm:py-12">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl lg:text-center">
+        <p class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-text sm:text-5xl lg:text-balance">
+          What's Included in Your Subscription
+        </p>
+        <p class="mt-6 text-lg/8 text-gray-400">
+          Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a elementum pulvinar et feugiat blandit at. In mi viverra elit nunc.
+        </p>
+      </div>
+      <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+        <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+          {
+            features.map(({ icon, feature, description }) => (
+              <Feature
+              icon={icon}
+              feature={feature}
+              description={description} />
+            ))
+          }
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
