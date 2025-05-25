@@ -1,6 +1,6 @@
 ---
 import { ClientRouter } from "astro:transitions";
-import NavigationMenu from "../components/NavigationMenu.astro";
+import MobileNav from "../components/atoms/MobileNav.astro";
 
 const navigationLinks = [
 	{
@@ -33,7 +33,7 @@ const navigationLinks = [
 		<ClientRouter />
 	</head>
 	<body>
-		<NavigationMenu links={navigationLinks} />
+		<MobileNav links={navigationLinks} />
 		<slot />
 	</body>
 </html>
