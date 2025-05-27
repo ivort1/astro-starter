@@ -1,30 +1,30 @@
 <label class="switch">
-    <input checked="true" id="checkbox" type="checkbox" />
-    <span class="slider">
-        <div class="star star_1"></div>
-        <div class="star star_2"></div>
-        <div class="star star_3"></div>
-        <svg viewBox="0 0 16 16" class="cloud_1 cloud">
-        <path
-            transform="matrix(.77976 0 0 .78395-299.99-418.63)"
-            fill="#fff"
-            d="m391.84 540.91c-.421-.329-.949-.524-1.523-.524-1.351 0-2.451 1.084-2.485 2.435-1.395.526-2.388 1.88-2.388 3.466 0 1.874 1.385 3.423 3.182 3.667v.034h12.73v-.006c1.775-.104 3.182-1.584 3.182-3.395 0-1.747-1.309-3.186-2.994-3.379.007-.106.011-.214.011-.322 0-2.707-2.271-4.901-5.072-4.901-2.073 0-3.856 1.202-4.643 2.925"
-        ></path>
-        </svg>
-    </span>
-</label>  
+  <input checked="true" id="checkbox" type="checkbox" />
+  <span class="slider">
+    <div class="star star_1"></div>
+    <div class="star star_2"></div>
+    <div class="star star_3"></div>
+    <svg viewBox="0 0 16 16" class="cloud_1 cloud">
+      <path
+        transform="matrix(.77976 0 0 .78395-299.99-418.63)"
+        fill="#fff"
+        d="m391.84 540.91c-.421-.329-.949-.524-1.523-.524-1.351 0-2.451 1.084-2.485 2.435-1.395.526-2.388 1.88-2.388 3.466 0 1.874 1.385 3.423 3.182 3.667v.034h12.73v-.006c1.775-.104 3.182-1.584 3.182-3.395 0-1.747-1.309-3.186-2.994-3.379.007-.106.011-.214.011-.322 0-2.707-2.271-4.901-5.072-4.901-2.073 0-3.856 1.202-4.643 2.925"
+      ></path>
+    </svg>
+  </span>
+</label>
 
 <style>
-    /* From Uiverse.io by JustCode14 */ 
-/* Theme Switch */
+/* Theme Switch (Modified for proportional scaling) */
+
 /* The switch - the box around the slider */
 .switch {
   font-size: 17px;
   position: relative;
   display: inline-block;
-  width: 4em;
-  height: 2.2em;
-  border-radius: 30px;
+  width: 2.7em;    /* modified from 4em */
+  height: 1.5em;   /* modified from 2.2em */
+  border-radius: 1.2em; /* scaled down from 30px (~1.76em originally) */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -45,21 +45,21 @@
   bottom: 0;
   background-color: #2a2a2a;
   transition: 0.4s;
-  border-radius: 30px;
+  border-radius: 1.2em;  /* keep proportion with container */
   overflow: hidden;
 }
 
 .slider:before {
   position: absolute;
   content: "";
-  height: 1.2em;
-  width: 1.2em;
-  border-radius: 20px;
-  left: 0.5em;
-  bottom: 0.5em;
+  height: 0.8em;       /* scaled from 1.2em */
+  width: 0.8em;        /* scaled from 1.2em */
+  border-radius: 50%;  /* ensures a circular shape */
+  left: 0.34em;       /* scaled from 0.5em */
+  bottom: 0.34em;     /* scaled from 0.5em */
   transition: 0.4s;
   transition-timing-function: cubic-bezier(0.81, -0.04, 0.38, 1.5);
-  box-shadow: inset 8px -4px 0px 0px #fff;
+  box-shadow: inset 5px -3px 0px 0px #fff;  /* scaled from inset 8px -4px */
 }
 
 .switch input:checked + .slider {
@@ -67,43 +67,45 @@
 }
 
 .switch input:checked + .slider:before {
-  transform: translateX(1.8em);
-  box-shadow: inset 15px -4px 0px 15px #ffcf48;
+  transform: translateX(1.2em);  /* scaled from 1.8em */
+  box-shadow: inset 10px -3px 0px 10px #ffcf48;  /* scaled from inset 15px -4px 0px 15px */
 }
 
+/* Stars */
 .star {
   background-color: #fff;
   border-radius: 50%;
   position: absolute;
-  width: 5px;
+  width: 3.5px;   /* scaled from 5px */
+  height: 3.5px;  /* scaled from 5px */
   transition: all 0.4s;
-  height: 5px;
 }
 
 .star_1 {
-  left: 2.5em;
-  top: 0.5em;
+  left: 1.7em;    /* scaled from 2.5em */
+  top: 0.34em;    /* scaled from 0.5em */
 }
 
 .star_2 {
-  left: 2.2em;
-  top: 1.2em;
+  left: 1.5em;    /* scaled from 2.2em */
+  top: 0.82em;    /* scaled from 1.2em */
 }
 
 .star_3 {
-  left: 3em;
-  top: 0.9em;
+  left: 2.04em;   /* scaled from 3em */
+  top: 0.61em;    /* scaled from 0.9em */
 }
 
 .switch input:checked ~ .slider .star {
   opacity: 0;
 }
 
+/* Cloud */
 .cloud {
-  width: 3.5em;
+  width: 2.4em;       /* scaled from 3.5em */
   position: absolute;
-  bottom: -1.4em;
-  left: -1.1em;
+  bottom: -0.95em;    /* scaled from -1.4em */
+  left: -0.75em;      /* scaled from -1.1em */
   opacity: 0;
   transition: all 0.4s;
 }

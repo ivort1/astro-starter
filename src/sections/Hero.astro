@@ -1,14 +1,27 @@
 ---
+import { Picture } from 'astro:assets';
+
+import computer from "../assets/3d_computer.webp";
+import Button1 from '../components/buttons/Button1.astro';
 ---
-<section class="py-8 grid grid-cols-1 gap-8">
-    <h2 class="text-text text-4xl font-semibold">
-        Small Business Web Development
-    </h2>
 
-    <p class="text-text">
-        Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
-        Elit sunt amet fugiat veniam occaecat fugiat aliqua. Anim aute id magna aliqua ad ad non deserunt sunt.
-    </p>
+<section class="px-6 lg:px-8 py-5 max-w-7xl mx-auto grid grid-cols-1 justify-items-center items-center text-center md:grid-cols-2 md:text-left">
+    <div class="flex flex-col gap-5">
+        <div>
+            <h2 class="text-base/7 font-semibold text-accent">Custom Designs and Code</h2>
 
-    <a href="" class="bg-accent text-text px-3 py-2">Get started</a>
+            <p class="text-4xl font-semibold tracking-tight text-pretty text-text">
+                Small Business Website Design & Development
+            </p>
+        </div>
+        
+        <p class="text-lg/8 text-gray-400">
+            Custom designed and coded websites, logo design and branding, copywriting, SEO, and more. All starting at $300 a month with $0 down.
+        </p>
+    
+        <Button1 href="/" text="Get started" bg="bg-[#00BFA6]" color="text-[#EAEAEA]" borderRadius="rounded-md"/>
+    </div>
+    
+    <Picture src={computer} format="webp" alt="computer"/>
 </section>
+
