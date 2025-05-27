@@ -1,8 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-    --color-background: #121212;
-    --color-foreground: #1E1E1E;
-    --color-text: #EAEAEA;
-    --color-accent: #00BFA6;
+  /* Base Dark Colors */
+  --color-background: #121212;   /* Overall app background */
+  --color-foreground: #1E1E1E;   /* Surfaces like cards, modals, navbars, and footers */
+  --color-text: #EAEAEA;         /* Primary text color for headings and paragraphs */
+  --color-muted: #B0B0B0;        /* Secondary text or icon color for less emphasis */
+  --color-divider: #2C2C2C;      /* Subtle dividers and border lines */
+
+  /* Your Original Green Accent - unchanged */
+  --color-accent: #00BFA6;        /* Signature accent for buttons, links, and interactive states */
+
+  /* Optional: Slight Variants for Interactive States */
+  /* These variants are computed very subtly so they still echo your original hue. */
+  --color-accent-hover: #1AC5AF;   /* A touch lighter for hover states */
+  --color-accent-active: #00AC95;  /* A slightly deeper version for active or pressed states */
 }
