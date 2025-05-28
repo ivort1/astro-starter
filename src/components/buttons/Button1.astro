@@ -11,18 +11,16 @@ interface Props {
 const { css = "", bg = "bg-gray-950", color = "text-white", borderRadius = "", href, text } = Astro.props as Props;
 ---
 
-<a href={href} class={`w-full rounded-md px-8 py-3 text-center text-lg font-semibold shadow-xs ${bg} ${color} ${borderRadius} md:w-fit`}>
+<a href={href} class={`${css} ${bg} ${color} ${borderRadius}`}>
     <span>{text}</span>
 </a>
 
 <style>
     a {
-        border: none;
         cursor: pointer;
         display: inline-block;
         /* font-family: inherit; */
         /* letter-spacing: 0.05rem; */
-        margin: 0;
         outline: none;
         overflow: hidden;
         position: relative;
@@ -40,6 +38,7 @@ const { css = "", bg = "bg-gray-950", color = "text-white", borderRadius = "", h
 
     a::before,
     a::after {
+        border-radius: inherit;  
         height: 100%;
         left: 0;
         position: absolute;
@@ -49,12 +48,12 @@ const { css = "", bg = "bg-gray-950", color = "text-white", borderRadius = "", h
     }
 
     a::before {
-        background: #D4AF37;
         content: "";
         left: -10%;
         transform: skew(30deg);
-        transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
         width: 120%;
+        clip-path: inset(0 round inherit);
+        transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
     }
 
     a:hover::before {
