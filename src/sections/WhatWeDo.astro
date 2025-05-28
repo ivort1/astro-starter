@@ -1,25 +1,61 @@
 ---
-import Card from "../components/card/Card.astro";
+import Card2 from "../components/card/Card2.astro";
 
-
+const services = [
+    {
+        header: "Website Design",
+        body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam sint quibusdam officiis reiciendis minima corporis aperiam quod quam facere.",
+        href: "/"
+    },
+    {
+        header: "Website Development",
+        body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam sint quibusdam officiis reiciendis minima corporis aperiam quod quam facere.",
+        href: "/"
+    },
+    {
+        header: "Logo Design",
+        body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam sint quibusdam officiis reiciendis minima corporis aperiam quod quam facere.",
+        href: "/"
+    },
+    {
+        header: "SEO Optimization",
+        body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam sint quibusdam officiis reiciendis minima corporis aperiam quod quam facere.",
+        href: "/"
+    },
+    {
+        header: "Content & Copywriting",
+        body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam sint quibusdam officiis reiciendis minima corporis aperiam quod quam facere.",
+        href: "/"
+    },
+    {
+        header: "Website Development",
+        body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam sint quibusdam officiis reiciendis minima corporis aperiam quod quam facere.",
+        href: "/"
+    }
+];
 ---
 
-<section class="px-6 lg:px-8 py-5 max-w-7xl mx-auto grid grid-cols-1 justify-items-center items-center text-center md:grid-cols-2 md:text-left">
-    <div class="flex flex-col gap-5">
+<section class="px-6 lg:px-8 py-5 max-w-7xl mx-auto text-center grid grid-cols-1 justify-items-center items-center">
+    <div class="text-pretty max-w-4xl flex flex-col">
         <div>
             <h2 class="text-base/7 font-semibold text-accent">What We Do</h2>
 
-            <p class="text-4xl font-semibold tracking-tight text-pretty text-text">
+            <p class="mt-2 text-4xl font-semibold tracking-tight text-balance text-text sm:text-6xl">
                 We Handle Your Website So You Can Focus on What Matters
             </p>
         </div>
         
-        <p class="text-lg/8 text-muted">
+        <p class="mt-5 text-lg/8 text-muted">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam sint quibusdam officiis reiciendis minima corporis aperiam quod quam facere.
         </p>
-    
     </div>
 
-    <Card />
+    <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 md:gap-8">
+        {
+            services.map(({ header, body, href }) => (
+                <Card2 header={header} body={body} href={href} />
+            ))
+        }
+    </div>
 </section>
 

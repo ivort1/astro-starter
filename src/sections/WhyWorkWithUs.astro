@@ -8,20 +8,20 @@ interface Feature {
 
 const features: Feature[] = [
   {
+    title: "Based in the United States.",
+    description:
+      "Working out of Southern California, our experts deliver personalized, industry-leading web solutions that keep your business ahead—without you lifting a finger."
+  },
+  {
     title: "Unrivaled Customer Support.",
     description:
       "Our dedicated 24/7 support team ensures your site runs flawlessly—even in emergencies—so you never have to worry about technical issues."
   },
   {
-    title: "Money-Back Guarantee.",
-    description:
-      "Enjoy peace of mind with our 100% money-back guarantee. We handle every detail of your website, making your online presence completely hands-free."
+    "title": "Opt-Out Assurance.",
+    "description": "Once your website goes live, we offer a 30-day trial and your total spend is capped at the cost of your first month. Experience our hands-free service with minimal commitment."
   },
-  {
-    title: "Based in the United States.",
-    description:
-      "Working out of Los Angeles, our experts deliver personalized, industry-leading web solutions that keep your business ahead—without you lifting a finger."
-  },
+
   //   {
 //     title: "Mobile First Design",
 //     description:
@@ -35,25 +35,25 @@ const features: Feature[] = [
 ];
 ---
 <section>
-<div class="overflow-hidden bg-white py-24 sm:py-32">
+<div class="overflow-hidden bg-background py-24 sm:py-32">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
       <div class="lg:pt-4 lg:pr-8">
         <div class="lg:max-w-lg">
           <h2 class="text-base/7 font-semibold text-accent">Why Work With Us?</h2>
-          <p class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
-            We Offer Piece of Mind and Unmatched Support
+          <p class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-text sm:text-5xl">
+            Get Piece of Mind and Unmatched Support
           </p>
-          <p class="mt-6 text-lg/8 text-gray-600">
+          <p class="mt-6 text-lg/8 text-muted">
             Our full-service web design and development agency makes managing your online presence effortless. We take care of every detail—from UI/UX design, to coding and development, and ongoing maintenance and support—allowing you to concentrate on growing your business.
           </p>
-          <dl class="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none">
+          <dl class="mt-10 max-w-xl space-y-8 text-base/7 text-muted lg:max-w-none">
               {
                 features.map(({ title, description }) => (
                   <div class="relative pl-12">
-                    <dt class="inline font-semibold text-gray-900">
+                    <dt class="inline font-semibold text-text">
                       <span class="absolute top-1 left-2 h-5 w-5">
-                        <DiamondCheck width="2rem" height="2rem" />
+                        <DiamondCheck width="2rem" height="2rem" squareFill="#FEFCE8" strokeColor="#D4AF37" />
                       </span>
                       {title}
                     </dt>

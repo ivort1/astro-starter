@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@import "tailwindcss";
+
 @theme {
   /* Base Dark Colors */
   --color-background: #121212;   /* Overall app background */
@@ -8,11 +10,8 @@
   --color-muted: #B0B0B0;        /* Secondary text or icon color for less emphasis */
   --color-divider: #2C2C2C;      /* Subtle dividers and border lines */
 
-  /* Your Original Green Accent - unchanged */
-  --color-accent: #00BFA6;        /* Signature accent for buttons, links, and interactive states */
-
-  /* Optional: Slight Variants for Interactive States */
-  /* These variants are computed very subtly so they still echo your original hue. */
-  --color-accent-hover: #1AC5AF;   /* A touch lighter for hover states */
-  --color-accent-active: #00AC95;  /* A slightly deeper version for active or pressed states */
+  /* Golden Accent Colors */
+  --color-accent: #D4AF37;        /* Signature gold accent for buttons, links, and interactive states */
+  --color-accent-hover: #E1C16B;   /* A lighter shade for hover states */
+  --color-accent-active: #B58925;  /* A richer, deeper shade for active or pressed states */
 }
