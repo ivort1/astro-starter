@@ -3,13 +3,13 @@ import DarkMode4 from '../toggles/DarkMode4.astro';
 ---
 
 <!-- Astro component: MobileNav.astro -->
-<nav id="mobile-nav" class="bg-white dark:bg-foreground shadow-2xl text-gray-800 dark:text-gray-100 px-5 py-7 w-full flex flex-col items-center justify-start transition-all ease-in-out duration-300 sticky top-0 z-50 md:flex-row md:px-18">
-  <div id="mobile-nav--content" class="w-full flex flex-row items-center justify-between">
-    <a id="mobile-nav--title" href="/" class="text-2xl font-medium  no-underline">
+<nav id="mobile-nav" class="bg-background shadow-2xl text-text px-5 py-7 w-full flex flex-col items-center justify-start transition-all ease-in-out duration-300 sticky top-0 z-50 lg:flex-row">
+  <div id="mobile-nav--content" class="w-full flex flex-row items-center justify-between lg:w-1/3">
+    <a id="mobile-nav--title" href="/" class="w-full text-2xl font-medium no-underline">
       Golden Bear Digital
     </a>
 
-      <button id="mobile-nav--toggle-menu" aria-expanded="false" class="bg-background cursor-pointer rounded-xl px-2 py-4 flex flex-col justify-center items-center gap-[6px] md:hidden">
+      <button id="mobile-nav--toggle-menu" aria-expanded="false" class="bg-background cursor-pointer rounded-xl px-2 py-4 flex flex-col justify-center items-center gap-[6px] lg:hidden">
         <div id="bar-1" class="bg-gray-800 dark:bg-gray-100 h-[2px] w-6 rounded-xl transition-transform duration-300 ease"></div>
         <div id="bar-2" class="bg-gray-800 dark:bg-gray-100 h-[2px] w-8 rounded-xl transition-opacity duration-300 ease"></div>
         <div id="bar-3" class="bg-gray-800 dark:bg-gray-100 h-[2px] w-6 rounded-xl transition-transform duration-300 ease"></div>
@@ -17,19 +17,25 @@ import DarkMode4 from '../toggles/DarkMode4.astro';
   </div>
 
 
-  <div id="mobile-nav--links" class="h-0 w-full overflow-hidden transition-all duration-500 md:h-fit">
-    <ul class="flex flex-col items-start justify-center gap-5 md:flex-row md:justify-end md:gap-8">
-      <li class="opacity-0 md:opacity-100">
+  <div id="mobile-nav--links" class="h-0 w-full overflow-hidden transition-all duration-500">
+    <ul class="font-bold capitalize flex flex-col items-start justify-center gap-5 lg:flex-row lg:justify-end lg:items-center lg:gap-8">
+      <li class="opacity-0 lg:opacity-100 hover:text-accent transition-colors duration-300">
         <a href="/">Home</a>
       </li>
-      <li class="opacity-0 md:opacity-100">
-        <a href="/buttons">Buttons</a>
+      <li class="opacity-0 lg:opacity-100 hover:text-accent transition duration-300 ease-in-out">
+        <a href="/#what-we-do">Services</a>
       </li>
-      <li class="opacity-0 md:opacity-100">
-        <a href="/toggles">Toggles</a>
+      <li class="opacity-0 lg:opacity-100 hover:text-accent transition duration-300 ease-in-out">
+        <a href="/ourwork">Our Work</a>
       </li>
-      <li class="opacity-0 md:opacity-100">
-        <DarkMode4 />
+      <li class="opacity-0 lg:opacity-100 hover:text-accent transition duration-300 ease-in-out">
+        <a href="/#pricing">Pricing</a>
+      </li>
+      <li class="opacity-0 lg:opacity-100 hover:text-accent transition duration-300 ease-in-out">
+        <a href="/faqs">FAQs</a>
+      </li>
+      <li class="opacity-0 lg:opacity-100 hover:text-accent transition duration-300 ease-in-out">
+        <a href="/contactus">Contact Us</a>
       </li>
     </ul>
   </div>
@@ -100,7 +106,7 @@ import DarkMode4 from '../toggles/DarkMode4.astro';
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1024px) {
   #mobile-nav--links {
     height: auto !important;
     margin-top: 0 !important;

@@ -1,6 +1,7 @@
 ---
 import Hero from "../sections/Hero.astro";
 import WhatWeDo from "../sections/WhatWeDo.astro";
+import Cta from "../sections/Cta.astro";
 import WhyWorkWithUs from "../sections/WhyWorkWithUs.astro";
 import Pricing from "../sections/Pricing.astro";
 import Faqs from "../sections/Faqs.astro";
@@ -10,6 +11,17 @@ import Faqs from "../sections/Faqs.astro";
     <Hero />
     <WhatWeDo />
     <WhyWorkWithUs />
+    <Cta />
     <Pricing />
     <Faqs />
 </main>
+
+<style is:global>
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background-color: #121212;
+    }
+</style>

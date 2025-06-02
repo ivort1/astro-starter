@@ -1,5 +1,28 @@
-{
-  "features": [
+import CalendarClock from '../src/components/icons/calendar-clock.svg';
+import CustomizeComputer from '../src/components/icons/customize-computer.svg';
+import LaptopCode from '../src/components/icons/laptop-code.svg';
+import Rocket from '../src/components/icons/rocket.svg';
+
+export interface Feature {
+  icon: string;
+  feature: string;
+  description: string;
+}
+
+export interface FAQ {
+  question: string;
+  answer: string;
+}
+
+export interface Step {
+  step: string;
+  icon: any;
+  title: string;
+  description: string;
+}
+
+// FEATURES
+export const features: Feature[] = [
     {
       "icon": "Code",
       "feature": "100% Custom Site",
@@ -40,9 +63,11 @@
       "feature": "Stripe Integration",
       "description": "Streamline your online transactions and provide a frictionless and efficient e-commerce payment experience for your customers."
     }
-  ],
-  "faqs": [
-    {
+];
+
+// FAQs
+export const faqs: FAQ[] = [
+ {
       "question": "How long does it take to build a website?",
       "answer": "The timeline for building a website varies based on complexity and features. Typically, it takes 4-6 weeks from initial consultation to launch."
     },
@@ -62,37 +87,32 @@
       "question": "What is your refund policy?",
       "answer": "The timeline for building a website varies based on complexity and features. Typically, it takes 4-6 weeks from initial consultation to launch."
     }
-  ],
-  "steps": [
+];
+
+// STEPS
+export const steps: Step[] = [
     {
       "step": "1",
-      "icon": "calendar-clock",
+      "icon": CalendarClock,
       "title": "Schedule a Call",
       "description": "Discuss your vision, goals, and requirements to create a tailored plan for your website."
     },
     {
       "step": "2",
-      "icon": "customize-computer",
+      "icon": CustomizeComputer,
       "title": "Approve the Design",
-      "description": "Create a custom design based on your input and sign off on the design before development begins."
+      "description": "We'll create a custom user interface and have you sign off on the design before development begins."
     },
     {
       "step": "3",
-      "icon": "laptop-code",
+      "icon": LaptopCode,
       "title": "Development & Revisions",
       "description": "Present the site for your feedback and make unlimited revisions to ensure it meets your expectations."
     },
     {
       "step": "4",
-      "icon": "rocket",
+      "icon": Rocket,
       "title": "Launch",
-      "description": "Deploy your website live, ensuring all features are functional and optimized for performance."
-    },
-    {
-      "step": "5",
-      "icon": "",
-      "title": "Ongoing Support",
-      "description": "Provide continuous maintenance, updates, and support to keep your site running smoothly."
+      "description": "Register your domain and launch your site, making it live for the world to see."
     }
-  ]
-}
+];

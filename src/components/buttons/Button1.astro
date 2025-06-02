@@ -2,17 +2,18 @@
 interface Props {
     css?: string;
     href: string;
-    text: string;
     bg?: string;
     color?: string;
     borderRadius?: string;
 }
 
-const { css = "", bg = "bg-gray-950", color = "text-white", borderRadius = "", href, text } = Astro.props as Props;
+const { css = "", bg = "bg-gray-950", color = "text-white", borderRadius = "", href } = Astro.props as Props;
 ---
 
 <a href={href} class={`${css} ${bg} ${color} ${borderRadius}`}>
-    <span>{text}</span>
+    <span class="flex flex-row items-center justify-center gap-2">
+        <slot />
+    </span>
 </a>
 
 <style>

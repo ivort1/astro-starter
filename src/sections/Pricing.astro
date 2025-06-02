@@ -16,7 +16,7 @@ interface Feature {
 
 const features: Feature[] = data.features;
 ---
-<section class="flex flex-col items-center justify-center gap-2">
+<section class="flex flex-col items-center justify-center gap-2" id="pricing">
   <!-- Pricing -->
   <div class="relative isolate px-6 py-2 sm:py-12 lg:px-8">
     <div class="absolute inset-x-0 -top-3 -z-10 transform-gpu overflow-hidden px-36 blur-3xl" aria-hidden="true">
@@ -31,7 +31,7 @@ const features: Feature[] = data.features;
     <div class="mx-auto mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-4xl lg:grid-cols-2">
       <!-- Annual subscription-->
       <div class="border-2 border-gray-800 rounded-3xl rounded-t-3xl bg-background p-8 ring-1 ring-gray-900/10 sm:mx-8 sm:rounded-b-none sm:p-10 lg:mx-0 lg:rounded-tr-none lg:rounded-bl-3xl">
-        <h3 id="tier-hobby" class="text-base/7 font-semibold text-accent text-balance">Annual subscription <span class="sm:ml-2 text-xs bg-yellow-50 font-semibold text-accent px-3 py-1 rounded-3xl border-2 border-accent">Save $600!</span></h3>
+        <h3 id="tier-hobby" class="text-base/7 font-semibold text-accent text-balance">Annual subscription <span class="sm:ml-2 text-xs bg-teal-100 font-bold text-accent px-3 py-1 rounded-3xl border-2 border-accent">Save $600!</span></h3>
         <p class="mt-4 flex items-baseline gap-x-2">
           <span class="text-5xl font-semibold tracking-tight text-white">$3000</span>
           <span class="text-base text-gray-400">/year</span>
@@ -51,7 +51,9 @@ const features: Feature[] = data.features;
             Cancel anytime after 12 months
           </li>
         </ul>
-        <Button1 css="border-1 border-[#FFFFFF] before:bg-[#1E1E1E] w-full mt-8 px-3.5 py-2.5 text-center text-sm font-semibold sm:mt-10" href="/" text="Get started" bg="bg-[#EAEAEA]" color="text-[#EAEAEA]" borderRadius="rounded-md"/>
+        <Button1 css="border-1 border-[#FFFFFF] before:bg-[#1E1E1E] w-full mt-8 px-3.5 py-2.5 text-center text-sm font-semibold sm:mt-10" href="/" bg="bg-[#EAEAEA]" color="text-[#EAEAEA]" borderRadius="rounded-md">
+          Get started
+        </Button1>
       </div>
 
       <!-- Monthly subscription-->
@@ -84,14 +86,16 @@ const features: Feature[] = data.features;
           </li>
         </ul>
 
-        <Button1 css="before:bg-[#D4AF37] w-full mt-8 px-3.5 py-2.5 text-center text-sm font-semibold sm:mt-10" href="/" text="Get started" bg="bg-[#E1C16B]" color="text-[#EAEAEA]" borderRadius="rounded-md"/>
+        <Button1 css="before:bg-[#00BFA6] w-full mt-8 px-3.5 py-2.5 text-center text-sm font-semibold sm:mt-10" href="/" bg="bg-[#33CCC1]" color="text-[#EAEAEA]" borderRadius="rounded-md">
+          Get started
+        </Button1>
       </div>
     </div>
   </div>
   
   <div class="flex flex-row items-center justify-center gap-2">
     <span class="rotate-90">
-      <DashArrowDown width="15rem" height="15rem" color="#D4AF37"/>
+      <DashArrowDown width="15rem" height="15rem" color="#00BFA6"/>
     </span>
     <h2 class="text-base/7 font-semibold text-accent">Everything you get ✨</h2>
   </div>

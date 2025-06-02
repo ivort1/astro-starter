@@ -1,0 +1,25 @@
+---
+interface Props {
+  step: string;
+  icon: any;
+  title: string;
+  description: string;
+}
+
+const { step, icon: Icon, title, description } = Astro.props as Props;
+---
+
+<li class="flex-start group relative flex lg:flex-col">
+  <span class="absolute left-[18px] top-14 h-[calc(100%_-_32px)] w-px bg-gray-300 lg:right-0 lg:left-auto lg:top-[18px] lg:h-px lg:w-[calc(100%_-_72px)]" aria-hidden="true"></span>
+  <div class="inline-flex h-12 w-12 text-xl shrink-0 items-center justify-center p-2 font-bold rounded-xl border border-gray-300 bg-gray-50 transition-all duration-200 group-hover:border-gray-900 group-hover:bg-gray-900 group-hover:text-white">
+    {step}
+  </div>
+
+  <div class="ml-6 lg:ml-0 lg:mt-10">
+    {Icon && <Icon class="w-8 h-8"/>}
+    <h3 class="text-xl font-bold text-gray-900 before:mb-2 before:block before:font-mono before:text-sm before:text-gray-500">
+      {title}
+    </h3>
+    <p class="mt-2 text-base text-gray-700">{description}</p>
+  </div>
+</li>

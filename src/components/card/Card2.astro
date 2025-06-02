@@ -8,7 +8,7 @@ interface Props {
 const { header, body, href } = Astro.props;
 ---
 
-<div class="rounded-xl px-2 py-7 group relative overflow-hidden bg-foreground shadow-xl ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl sm:mx-auto sm:max-w-sm sm:rounded-lg sm:px-10">
+<div class="rounded-xl px-2 py-7 group relative overflow-hidden background shadow-xl ring-1 ring-gray-900/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl sm:mx-auto sm:max-w-sm sm:rounded-lg sm:px-10">
     <div class="flex flex-col justify-center items-center gap-7 max-w-md">
         <!-- Icon container with its background -->
         <div class="relative inline-block">
@@ -38,3 +38,9 @@ const { header, body, href } = Astro.props;
         </div>
     </div>
 </div>
+
+<style>
+    .background {
+        background: url("/src/assets/maze-bg-green.svg");
+    }
+</style>

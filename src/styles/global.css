@@ -6,12 +6,12 @@
   /* Base Dark Colors */
   --color-background: #121212;   /* Overall app background */
   --color-foreground: #1E1E1E;   /* Surfaces like cards, modals, navbars, and footers */
-  --color-text: #EAEAEA;         /* Primary text color for headings and paragraphs */
+  --color-text: #EAEAEA;         /* Primary text for headings and paragraphs */
   --color-muted: #B0B0B0;        /* Secondary text or icon color for less emphasis */
   --color-divider: #2C2C2C;      /* Subtle dividers and border lines */
 
-  /* Golden Accent Colors */
-  --color-accent: #D4AF37;        /* Signature gold accent for buttons, links, and interactive states */
-  --color-accent-hover: #E1C16B;   /* A lighter shade for hover states */
-  --color-accent-active: #B58925;  /* A richer, deeper shade for active or pressed states */
+  /* Aqua Green Accent Colors (New Base Accent) */
+  --color-accent: #00BFA6;         /* New base accent color */
+  --color-accent-hover: #33CCC1;    /* A slightly brighter/lighter variant for hover states */
+  --color-accent-active: #009688;   /* A slightly deeper/darker shade for active/pressed states */
 }
