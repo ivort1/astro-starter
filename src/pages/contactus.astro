@@ -6,63 +6,60 @@ import database from "../../src/database.json";
 import Button1 from '../components/buttons/Button1.astro';
 import Phone from '../components/icons/Phone.svg';
 import Envelope from '../components/icons/Envelope.svg';
+import HeartHandshake from '../components/icons/HeartHandshake.astro';
 
 const data: Data = database;
 ---
 
 <Layout>
-    <section>
-        <div class="overflow-hidden bg-background py-24 sm:py-32">
-            <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-                    <div class="lg:pt-4 lg:pr-8">
-                        <div class="lg:max-w-lg">
-                            <h2 class="text-base/7 font-semibold text-accent">Ready to start?</h2>
-                            <p class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-text sm:text-5xl">
-                                Contact Us Today
-                            </p>
-                            <p class="mt-6 text-lg/8 text-muted">
-                                Our full-service web design and development agency makes managing your online presence effortless. We take care of every detail—from UI/UX design, to coding and development, and ongoing maintenance and support—allowing you to concentrate on growing your business.
-                            </p>
+    <section class="relative p-4 grid grid-cols-1 gap-8 md:grid-cols-2 lg:pb-48 lg:max-w-7xl lg:mx-auto">
+        <div class="flex flex-col gap-8 z-10">
+            <div>
+                <h2 class="text-base/7 font-semibold text-accent">Ready to start?</h2>
+                <p class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-text sm:text-5xl">Contact Us Today</p>
+                <p class="mt-6 text-lg/8 text-muted">
+                    At Golden Bear Digital, we provide an all-in-one website solution designed specifically for small businesses.
+                    Our comprehensive subscription service covers every detail—from innovative UI/UX design and cutting-edge coding to reliable hosting, domain 
+                    egistration, custom logo creation, and ongoing maintenance and support. Let our expert team manage your entire online presence so you can focus on growing
+                    your business. Reach out now to transform your digital footprint and drive lasting results.
+                </p>
+            </div>   
 
-                            <Button1 css="before:bg-[#00BFA6] w-full px-3.5 py-2.5 text-center text-lg font-semibold sm:mt-10 md:w-1/2 sm:px-8 sm:py-5" href="/" bg="bg-[#33CCC1]" color="text-[#EAEAEA]" borderRadius="rounded-md">
-                                Schedule a call
-                            </Button1>
-                            <div class="p-4 flex flex-row items-center justify-start gap-4">
-                                <Envelope class="text-white w-5 h-5"/>
+            <Button1 css="before:bg-[#00BFA6] w-full px-3.5 py-2.5 text-center text-lg font-semibold lg:w-1/2 sm:px-8 sm:py-5" href="/" bg="bg-[#33CCC1]" color="text-[#EAEAEA]" borderRadius="rounded-md">
+                Schedule a call
+            </Button1>
 
-                                <div>
-                                    <h2 class="text-text font-bold">Email</h2>
-                                    <p class="text-muted">sales@goldenbeardigital.com</p>
-                                </div>
-                            </div>
+            <div class="flex flex-row items-center justify-start gap-4">
+                <Envelope class="text-white w-5 h-5"/>
 
-                            <div class="p-4 flex flex-row items-center justify-start gap-4">
-                                <Phone class="text-white w-5 h-5 rotate-90"/>
+                <div>
+                    <h2 class="text-text font-bold">Email</h2>
+                    <p class="text-muted">sales@goldenbeardigital.com</p>
+                </div>
+            </div>
 
-                                <div>
-                                    <h2 class="text-text font-bold">Phone</h2>
-                                    <p class="text-muted">+1 (626) 322-1212</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="flex flex-row items-center justify-start gap-4">
+                <Phone class="text-white w-5 h-5 rotate-90"/>
 
-                    <img src="/src/assets/rocket_white.webp" alt="rocket" class="rotate-30"/>
+                <div>
+                    <h2 class="text-text font-bold">Phone</h2>
+                    <p class="text-muted">+1 (626) 322-1212</p>
+                </div>
             </div>
         </div>
-    </section>
-    <section>
-        <Steps1 stepsArray={data.steps}/>
 
-        <div class="text-center mx-auto max-w-2xl px-6 lg:px-8">
-            <h2 class="text-base/7 font-semibold text-accent">And don't forget...</h2>
-            <p class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-background sm:text-5xl">
-                Ongoing Support
-            </p>
-            <p class="mt-6 text-lg/8 text-foreground">
-                After launch, your subscription includes continuous maintenance, updates, and support to keep your site running smoothly.
-            </p>
-        </div>
+        <img src="/src/assets/rocket_white.webp" alt="rocket" class="rotate-30 mx-auto"/>
+
+        <img src="/src/assets/section_dividers/curve.svg" alt="section divider" class="rotate-180 absolute bottom-0 left-0"/>
+    </section>
+    
+    <section class="bg-accent px-4 pb-12 w-full max-w-7xl lg:mx-auto">
+        <Steps1 stepsArray={data.steps}/>
     </section>
 </Layout>
+
+<style>
+    body {
+        background-color: #121212;
+    }
+</style>
