@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import AboutHero from "../components/about/AboutHero.astro";
+import AboutStory from "../components/about/AboutStory.astro";
+import AboutValues from "../components/about/AboutValues.astro";
+import AboutCommitments from "../components/about/AboutCommitments.astro";
+import CTABanner from "../components/CTABanner.astro";
+---
+
+<BaseLayout
+  title="About Us | Harding Construction — Family-Owned Contractor in Upland, CA"
+  description="Meet Anthony Harding — the family-owned general contractor behind Harding Construction. Serving Upland and the Inland Empire with honest, quality craftsmanship."
+  page="/about"
+>
+  <AboutHero />
+  <AboutStory />
+  <AboutValues />
+  <AboutCommitments />
+  <CTABanner />
+</BaseLayout>

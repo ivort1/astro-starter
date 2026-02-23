@@ -1,0 +1,19 @@
+---
+import { PARTNERS } from "../../data/site";
+---
+
+<section class="py-16 px-6 bg-gray-100">
+  <div class="max-w-[1200px] mx-auto text-center">
+    <p class="section-label">Our Partners</p>
+    <h2 class="font-display font-semibold text-black leading-tight mb-6" style="font-size: clamp(24px, 3vw, 32px);">
+      We Work With the Best Suppliers
+    </h2>
+    <div class="flex flex-wrap gap-5 justify-center mt-12">
+      {PARTNERS.map((p) => (
+        <div class="px-7 py-3.5 rounded-lg border border-gray-100 bg-white text-sm font-medium text-gray-700">
+          {p}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

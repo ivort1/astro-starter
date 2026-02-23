@@ -1,0 +1,26 @@
+
+.---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ContactHero from "../components/contact/ContactHero.astro";
+import ContactInfo from "../components/contact/ContactInfo.astro";
+import ContactForm from "../components/contact/ContactForm.astro";
+import CTABanner from "../components/CTABanner.astro";
+---
+
+<BaseLayout
+  title="Contact Us | Harding Construction — Get a Free Estimate in Upland, CA"
+  description="Contact Harding Construction for a free remodeling estimate. Call (909) 238-5909, text (909) 238-5090, or email. Serving Upland and the Inland Empire."
+  page="/contact"
+  hideFloatingCTA={true}
+>
+  <ContactHero />
+
+  <section class="py-24 px-6">
+    <div class="max-w-300 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+      <ContactInfo />
+      <ContactForm />
+    </div>
+  </section>
+
+  <CTABanner />
+</BaseLayout>

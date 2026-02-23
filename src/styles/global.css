@@ -1,17 +1,134 @@
 @import "tailwindcss";
 
-@import "tailwindcss";
-
+/* ─── CUSTOM THEME TOKENS (Tailwind 4) ─────────────────────────────── */
 @theme {
-  /* Base Dark Colors */
-  --color-background: #121212;   /* Overall app background */
-  --color-foreground: #1E1E1E;   /* Surfaces like cards, modals, navbars, and footers */
-  --color-text: #EAEAEA;         /* Primary text for headings and paragraphs */
-  --color-muted: #B0B0B0;        /* Secondary text or icon color for less emphasis */
-  --color-divider: #2C2C2C;      /* Subtle dividers and border lines */
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "DM Sans", -apple-system, sans-serif;
 
-  /* Aqua Green Accent Colors (New Base Accent) */
-  --color-accent: #00BFA6;         /* New base accent color */
-  --color-accent-hover: #33CCC1;    /* A slightly brighter/lighter variant for hover states */
-  --color-accent-active: #009688;   /* A slightly deeper/darker shade for active/pressed states */
+  --color-accent: #D95030;
+  --color-accent-hover: #C04428;
+  --color-black: #111111;
+  --color-dark: #1a1a1a;
+  --color-gray-900: #222222;
+  --color-gray-700: #555555;
+  --color-gray-500: #888888;
+  --color-gray-300: #cccccc;
+  --color-gray-100: #f5f5f5;
+
+  --animate-fade-up: fade-up 0.7s ease-out both;
+  --animate-fade-up-d1: fade-up 0.7s ease-out 0.1s both;
+  --animate-fade-up-d2: fade-up 0.7s ease-out 0.2s both;
+  --animate-fade-up-d3: fade-up 0.7s ease-out 0.3s both;
+  --animate-fade-up-d4: fade-up 0.7s ease-out 0.4s both;
+  --animate-fade-in: fade-in 0.6s ease-out both;
+  --animate-slide-down: slide-down 0.4s ease-out both;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slide-down {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── BASE RESETS ──────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-black);
+}
+
+/* ─── REUSABLE COMPONENT CLASSES ───────────────────────────────────── */
+
+/* Buttons */
+.btn-primary {
+  @apply inline-flex items-center gap-2.5 rounded-md px-8 py-3.5 text-[15px] font-semibold tracking-wide text-white transition-all duration-250 cursor-pointer;
+  background: var(--color-accent);
+}
+.btn-primary:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(217, 80, 48, 0.3);
+}
+
+.btn-outline {
+  @apply inline-flex items-center gap-2.5 rounded-md px-8 py-3.5 text-[15px] font-semibold tracking-wide transition-all duration-250 cursor-pointer bg-transparent;
+  color: var(--color-black);
+  border: 1.5px solid var(--color-gray-300);
+}
+.btn-outline:hover {
+  border-color: var(--color-black);
+}
+
+.btn-ghost {
+  @apply inline-flex items-center gap-2 bg-transparent border-none text-[15px] font-semibold cursor-pointer py-2 px-0 transition-all duration-250;
+  color: var(--color-accent);
+}
+.btn-ghost:hover {
+  gap: 12px;
+}
+
+.btn-white {
+  @apply inline-flex items-center gap-2.5 rounded-md px-8 py-3.5 text-[15px] font-semibold bg-white cursor-pointer transition-all duration-250 border-none;
+  color: var(--color-black);
+}
+.btn-white:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Section helpers */
+.section-label {
+  @apply text-[11px] font-semibold uppercase tracking-[4px] mb-4;
+  color: var(--color-accent);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  @apply font-semibold leading-[1.15] mb-5;
+  font-size: clamp(32px, 5vw, 48px);
+  color: var(--color-black);
+}
+
+.section-subtitle {
+  @apply text-[17px] leading-relaxed max-w-[560px];
+  color: var(--color-gray-700);
+}
+
+.divider {
+  @apply w-12 h-0.5 my-6;
+  background: var(--color-accent);
+}
+
+/* FAQ accordion */
+.faq-chevron {
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+.faq-chevron.open {
+  transform: rotate(180deg);
+}
+
+/* Form inputs */
+.form-input {
+  @apply w-full rounded-lg px-4 py-3.5 text-[15px] bg-white outline-none transition-colors duration-200;
+  font-family: var(--font-body);
+  color: var(--color-black);
+  border: 1.5px solid var(--color-gray-300);
+}
+.form-input:focus {
+  border-color: var(--color-accent);
+}
+.form-input::placeholder {
+  color: var(--color-gray-500);
 }

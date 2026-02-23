@@ -1,0 +1,38 @@
+---
+const values = [
+  {
+    num: "01",
+    title: "Family-Owned & Operated",
+    desc: "You'll work directly with Anthony — not a sales rep, not a project manager, not a call center. We're real people who care about doing right by you.",
+  },
+  {
+    num: "02",
+    title: "Quality Craftsmanship",
+    desc: "We never cut corners. Every tile, every cabinet, every coat of paint is done with care and precision. We're not satisfied until you are.",
+  },
+  {
+    num: "03",
+    title: "Transparent Pricing",
+    desc: "No hidden fees, no surprise upcharges. We give you an honest quote upfront and stick to it. That's how we've built our reputation.",
+  },
+];
+---
+
+<section class="py-24 px-6 bg-gray-100">
+  <div class="max-w-300 mx-auto text-center">
+    <p class="section-label">Why Choose Us</p>
+    <h2 class="section-title">What Makes Us Different</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-16">
+      {values.map((v) => (
+        <div>
+          <div class="font-display text-5xl font-bold leading-none mb-4" style="color: var(--color-accent);">
+            {v.num}
+          </div>
+          <h3 class="text-lg font-semibold mb-2">{v.title}</h3>
+          <p class="text-sm text-gray-700 leading-relaxed">{v.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

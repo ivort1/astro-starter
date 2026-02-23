@@ -1,8 +1,25 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Portfolio from './portfolio.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/home/Hero.astro";
+import ServiceStrip from "../components/home/ServiceStrip.astro";
+import AboutPreview from "../components/home/AboutPreview.astro";
+import ServicesGrid from "../components/home/ServicesGrid.astro";
+import Testimonials from "../components/home/Testimonials.astro";
+import Partners from "../components/home/Partners.astro";
+import CTABanner from "../components/CTABanner.astro";
+import CTABanner2 from "../components/CTABanner2.astro";
 ---
 
-<Layout>
-	<Portfolio>
-</Layout>
+<BaseLayout
+  title="Harding Construction | Kitchen & Bathroom Remodels in Upland, CA"
+  description="Family-owned general contractor in Upland, CA specializing in kitchen remodels, bathroom remodels, and full home renovations. Licensed & insured. Call (909) 238-5909 for a free estimate."
+  page="/"
+>
+  <Hero />
+  <AboutPreview />
+  <ServicesGrid />
+  <CTABanner2 />
+  <Testimonials />
+  <Partners />
+  <CTABanner />
+</BaseLayout>

@@ -1,0 +1,81 @@
+---
+import { SITE } from "../../data/site";
+import IconPhone from "../ui/IconPhone.astro";
+import IconArrow from "../ui/IconArrow.astro";
+import IconStar from "../ui/IconStar.astro";
+---
+
+<section class="min-h-screen flex items-center relative overflow-hidden bg-linear-to-br from-[#fafafa] to-[#f0f0f0] pt-32 pb-20 px-6 lg:pt-28">
+  <!-- Background pattern -->
+  <div
+    class="absolute top-0 right-0 bottom-0 w-1/2 opacity-[0.03]"
+    style="background: repeating-linear-gradient(45deg, var(--color-black) 0, var(--color-black) 1px, transparent 0, transparent 50%); background-size: 40px 40px;"
+  ></div>
+
+  <div class="max-w-300 mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+    <!-- Content -->
+    <div class="max-w-135">
+      <div class="inline-flex items-center gap-2 bg-white border border-gray-300 px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase text-gray-700 mb-8 animate-fade-up">
+        <span class="w-1.5 h-1.5 rounded-full" style="background: var(--color-accent);"></span>
+        Family-Owned · Upland, CA
+      </div>
+
+      <h1 class="font-display font-semibold leading-[1.08] text-black mb-6 animate-fade-up-d1" style="font-size: clamp(40px, 5.5vw, 64px);">
+        Your Home,<br />Beautifully <em class="italic" style="color: var(--color-accent);">Remodeled.</em>
+      </h1>
+
+      <p class="text-[17px] text-gray-700 leading-relaxed mb-10 max-w-115 animate-fade-up-d2">
+        Harding Construction is a family-run general contractor specializing in kitchen and
+        bathroom remodels in Upland and throughout the Inland Empire. Quality craftsmanship,
+        honest pricing, and a personal touch — every time.
+      </p>
+
+      <div class="flex gap-4 flex-wrap animate-fade-up-d3">
+        <a href={SITE.phoneTel} class="btn-primary">
+          <IconPhone /> Call for Free Estimate
+        </a>
+        <a href="/services" class="btn-outline">
+          Our Services <IconArrow />
+        </a>
+      </div>
+
+      <!-- Trust bar -->
+      <div class="mt-14 flex items-center gap-6 pt-8 border-t border-black/8 flex-wrap animate-fade-up-d4">
+        <div class="flex flex-col">
+          <span class="font-display text-[28px] font-bold text-black">500+</span>
+          <span class="text-xs text-gray-500 tracking-wide">Projects Completed</span>
+        </div>
+        <div class="w-px h-10 bg-gray-300 hidden sm:block"></div>
+        <div class="flex flex-col">
+          <span class="font-display text-[28px] font-bold text-black">{SITE.licenseNumber}</span>
+          <span class="text-xs text-gray-500 tracking-wide">Licensed & Insured</span>
+        </div>
+        <div class="w-px h-10 bg-gray-300 hidden sm:block"></div>
+        <div class="flex flex-col">
+          <div class="flex gap-0.5">
+            <IconStar /><IconStar /><IconStar /><IconStar /><IconStar />
+          </div>
+          <span class="text-xs text-gray-500 tracking-wide">5-Star Rated</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Visual -->
+    <div class="hidden lg:flex justify-center items-center animate-fade-up-d2">
+      <div class="grid grid-cols-2 gap-3 w-full max-w-120">
+        <div class="bg-linear-to-br from-[#f8f4f0] to-[#ebe5de] rounded-xl overflow-hidden aspect-3/4 relative flex items-center justify-center mt-10">
+          <span class="text-5xl opacity-15">🍳</span>
+          <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm px-4 py-3 rounded-lg text-[13px] font-semibold text-black">
+            Kitchen Remodels
+          </div>
+        </div>
+        <div class="bg-linear-to-br from-[#f0f4f8] to-[#dee5eb] rounded-xl overflow-hidden aspect-3/4 relative flex items-center justify-center -mt-10">
+          <span class="text-5xl opacity-15">🚿</span>
+          <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm px-4 py-3 rounded-lg text-[13px] font-semibold text-black">
+            Bathroom Remodels
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

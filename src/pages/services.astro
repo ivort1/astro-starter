@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ServicesHero from "../components/services/ServicesHero.astro";
+import ServicesDetailGrid from "../components/services/ServicesDetailGrid.astro";
+import ServicesPartners from "../components/services/ServicesPartners.astro";
+import ServicesMissing from "../components/services/ServicesMissing.astro";
+import CTABanner from "../components/CTABanner.astro";
+---
+
+<BaseLayout
+  title="Our Services | Harding Construction — Remodeling & Renovation in Upland, CA"
+  description="Kitchen remodels, bathroom remodels, flooring, tile, electrical, painting, drywall, cabinetry, and more. Full-service general contractor in Upland, CA."
+  page="/services"
+>
+  <ServicesHero />
+  <ServicesDetailGrid />
+  <ServicesPartners />
+  <ServicesMissing />
+  <CTABanner />
+</BaseLayout>

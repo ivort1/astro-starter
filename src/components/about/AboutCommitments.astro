@@ -1,0 +1,25 @@
+---
+import { COMMITMENTS } from "../../data/site";
+import IconCheck from "../ui/IconCheck.astro";
+---
+
+<section class="py-24 px-6">
+  <div class="max-w-300 mx-auto">
+    <div class="text-center mb-12">
+      <p class="section-label">Our Promise</p>
+      <h2 class="section-title">What You Can Count On</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {COMMITMENTS.map((c) => (
+        <div class="p-8 rounded-xl border border-gray-100 flex gap-4 items-start">
+          <div class="shrink-0 mt-0.5"><IconCheck /></div>
+          <div>
+            <h4 class="text-[15px] font-semibold mb-1">{c.title}</h4>
+            <p class="text-[13px] text-gray-700 leading-relaxed">{c.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

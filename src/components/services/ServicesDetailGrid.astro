@@ -1,0 +1,43 @@
+---
+import { ALL_SERVICES, SITE } from "../../data/site";
+import IconArrow from "../ui/IconArrow.astro";
+---
+
+<section class="py-24 px-6">
+  <div class="max-w-[1200px] mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {ALL_SERVICES.map((s) => (
+        <div
+          class:list={[
+            "p-10 rounded-xl border transition-all duration-300",
+            s.specialty
+              ? "bg-dark text-white border-dark"
+              : "border-gray-100 hover:border-gray-300 hover:shadow-md",
+          ]}
+        >
+          {s.specialty && (
+            <span
+              class="inline-block text-[10px] font-bold tracking-wider uppercase text-white px-3 py-1 rounded-full mb-4"
+              style="background: var(--color-accent);"
+            >
+              Our Specialty
+            </span>
+          )}
+          <h3 class="font-display text-2xl font-semibold mb-3 flex items-center gap-3">
+            <span>{s.icon}</span> {s.title}
+          </h3>
+          <p class:list={["text-sm leading-relaxed", s.specialty ? "text-white/70" : "text-gray-700"]}>
+            {s.desc}
+          </p>
+          {s.specialty && (
+            <div class="mt-5">
+              <a href={SITE.phoneTel} class="btn-ghost" style="color: var(--color-accent);">
+                Get a Quote <IconArrow />
+              </a>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
