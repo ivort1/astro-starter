@@ -55,6 +55,9 @@ const rest      = ALL_SERVICES.filter((s) => !s.featured);
               <p class="text-[14px] leading-relaxed" style="color:var(--color-gcd-muted);">
                 {service.desc}
               </p>
+              <p class="text-[12px] font-semibold mt-2" style="color:var(--color-gcd-teal);">
+                {service.price || service.pricing}
+              </p>
             </div>
           ))}
         </div>

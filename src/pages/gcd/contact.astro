@@ -10,16 +10,98 @@ import CTABanner from "../../sections/cta/CTABannerDark1.astro";
   description="Ready to get a professional website for your business? Contact Golden Coast Digital. We respond same day and offer a free, no-pressure consultation."
 >
   <!-- Hero -->
-  <section class="py-20 px-6" style="background:var(--color-gcd-bg);border-bottom:1px solid var(--color-gcd-border);">
+  <section class="pt-20 pb-12 px-6" style="background:var(--color-gcd-bg);">
     <div class="max-w-300 mx-auto">
       <p class="text-[11px] font-semibold uppercase tracking-[4px] mb-4" style="color:var(--color-gcd-teal);">
         Get in Touch
       </p>
-      <h1 class="text-[clamp(32px,5vw,56px)] font-bold leading-[1.15] max-w-155" style="color:var(--color-gcd-text);">
+      <h1 class="text-[clamp(32px,5vw,56px)] font-bold leading-[1.15] mb-10 max-w-[640px]" style="color:var(--color-gcd-text);">
         Start Your Project Today
       </h1>
+
+      <!-- Trust assurance strip -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+
+        <!-- 01: Local & In-House -->
+        <div
+          class="flex items-start gap-4 p-5 rounded-xl"
+          style="background:var(--color-gcd-surface);border:1px solid var(--color-gcd-border);border-top:2px solid var(--color-gcd-teal);"
+        >
+          <div
+            class="w-9 h-9 flex items-center justify-center rounded-lg flex-shrink-0 mt-0.5"
+            style="background:rgba(45,212,191,0.08);color:var(--color-gcd-teal);"
+          >
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+              <circle cx="12" cy="9" r="2.5"/>
+            </svg>
+          </div>
+          <div>
+            <p class="text-[14px] font-semibold mb-1" style="color:var(--color-gcd-text);">
+              Fontana, CA — 100% In-House
+            </p>
+            <p class="text-[13px] leading-relaxed" style="color:var(--color-gcd-muted);">
+              US-based team. No overseas outsourcing. You talk directly to the people building your site.
+            </p>
+          </div>
+        </div>
+
+        <!-- 02: We Handle Everything -->
+        <div
+          class="flex items-start gap-4 p-5 rounded-xl"
+          style="background:var(--color-gcd-surface);border:1px solid var(--color-gcd-border);border-top:2px solid var(--color-gcd-teal);"
+        >
+          <div
+            class="w-9 h-9 flex items-center justify-center rounded-lg flex-shrink-0 mt-0.5"
+            style="background:rgba(45,212,191,0.08);color:var(--color-gcd-teal);"
+          >
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="3" width="20" height="14" rx="2"/>
+              <path d="M8 21h8M12 17v4"/>
+            </svg>
+          </div>
+          <div>
+            <p class="text-[14px] font-semibold mb-1" style="color:var(--color-gcd-text);">
+              We Handle Everything, Permanently
+            </p>
+            <p class="text-[13px] leading-relaxed" style="color:var(--color-gcd-muted);">
+              Hosting, edits, updates, security — all on us. Focus on your business. We own the website.
+            </p>
+          </div>
+        </div>
+
+        <!-- 03: Risk-Free -->
+        <div
+          class="flex items-start gap-4 p-5 rounded-xl"
+          style="background:var(--color-gcd-surface);border:1px solid var(--color-gcd-border);border-top:2px solid var(--color-gcd-teal);"
+        >
+          <div
+            class="w-9 h-9 flex items-center justify-center rounded-lg flex-shrink-0 mt-0.5"
+            style="background:rgba(45,212,191,0.08);color:var(--color-gcd-teal);"
+          >
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+          </div>
+          <div>
+            <p class="text-[14px] font-semibold mb-1" style="color:var(--color-gcd-text);">
+              30-Day Opt-Out, No Catch
+            </p>
+            <p class="text-[13px] leading-relaxed" style="color:var(--color-gcd-muted);">
+              Cancel within 30 days of launch and your total spend is capped. No extra charges, no fees.
+            </p>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
+
+  <!-- Divider -->
+  <div class="px-6" style="background:var(--color-gcd-bg);">
+    <div class="max-w-300 mx-auto" style="border-top:1px solid var(--color-gcd-border);"></div>
+  </div>
 
   <!-- Contact layout -->
   <section class="py-24 px-6" style="background:var(--color-gcd-bg);">

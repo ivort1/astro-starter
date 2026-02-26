@@ -1,12 +1,12 @@
 // ─── CONTACT INFO ───────────────────────────────────────────────────────
 export const SITE = {
   name: "Golden Coast Digital",
-  phone: "000-000-0000",            // TODO: replace
-  phoneFmt: "(000) 000-0000",       // TODO: replace
-  phoneTel: "tel:+10000000000",     // TODO: replace
+  phone: "626-384-7075",            // TODO: replace
+  phoneFmt: "(626) 384-7075",       // TODO: replace
+  phoneTel: "tel:+16263847075",     // TODO: replace
   email: "hello@goldencoastdigital.com", // TODO: replace
   emailHref: "mailto:hello@goldencoastdigital.com",
-  address: "Southern California",   // TODO: replace with city
+  address: "Fontana, California",   // TODO: replace with city
   tagline: "Websites for Small Businesses",
   description:
     "Golden Coast Digital builds fast, modern, SEO-optimized websites for small businesses — $200/month, no upfront cost, no contracts after year one.",
@@ -17,7 +17,7 @@ export const NAV_LINKS = [
   { label: "Home",     href: "/gcd" },
   { label: "Services", href: "/gcd/services" },
   { label: "Our Work", href: "/gcd/work" },
-  { label: "Contact",  href: "/gcd/contact" },
+  { label: "Contact Us",  href: "/gcd/contact" },
 ];
 
 // ─── WHAT WE OFFER (short list for home page) ───────────────────────────
@@ -83,27 +83,37 @@ export const ALL_SERVICES = [
   },
   {
     title: "Unlimited Edits & Maintenance",
-    desc: "Prices change. New services get added. Photos get updated. We make every edit same-day — no tickets, no hourly fees.",
+    desc: "Prices change. New services get added. Photos get updated. We make every edit same-day with no hourly fees or additional charges.",
     featured: true,
-  },
-  {
-    title: "Multi-Language Support",
-    desc: "Need your site in Spanish or another language? We build bilingual sites for clients serving diverse communities. Add-on pricing applies.",
-    featured: false,
   },
   {
     title: "Custom Logo Design",
     desc: "No logo yet? We design clean, professional logos that look great on your website, business cards, trucks, and uniforms.",
+    price: "$300/one-time",
     featured: false,
   },
   {
     title: "Copywriting",
-    desc: "Struggling to put it into words? We write compelling website copy that tells your story, builds trust, and drives calls.",
+    desc: "We will write keyword-rich content that tells your story, builds trust, and drives customer conversions.",
+    pricing: "Starting at $50/page (one-time)",
     featured: false,
   },
   {
     title: "Dedicated SEO Campaigns",
     desc: "Beyond on-page SEO — ongoing keyword targeting, content strategy, and backlink building to climb Google rankings month over month.",
+    price: "Starting at $2500/month",
+    featured: false,
+  },
+  {
+    title: "Blog",
+    desc: "We build and maintain a blog for your business to help you attract new customers and keep existing ones engaged.",
+    price: "$50/month",
+    featured: false,
+  },
+  {
+    title: "Multi-Language Support",
+    desc: "Need your site in Spanish or another language? We build bilingual sites for clients serving diverse communities.",
+    price: "$100/per language (one-time)",
     featured: false,
   },
 ];
@@ -114,7 +124,7 @@ export const PRICING = {
   period: "/month",
   upfront: "$0 down",
   commitment: "12-month minimum, then month-to-month",
-  guarantee: "30-day money-back guarantee",
+  guarantee: "30-day trial period",
   included: [
     "Custom design & development",
     "Up to 5 pages",
@@ -127,12 +137,12 @@ export const PRICING = {
     "Mobile-first, responsive design",
   ],
   addons: [
-    { label: "Additional pages",         price: "$99/page" },
-    { label: "Custom logo design",        price: "$200" },
-    { label: "Copywriting",               price: "Contact us" },
-    { label: "Dedicated SEO campaign",    price: "Contact us" },
-    { label: "Blog", price: "Contact us" },
-    { label: "Multi-language (Spanish+)", price: "Contact us" },
+    { label: "Additional pages",          price: "$99/page" },
+    { label: "Custom logo design",        price: "$300" },
+    { label: "Copywriting",               price: "$50+/page" },
+    { label: "Dedicated SEO campaign",    price: "$2,500+/month" },
+    { label: "Blog",                      price: "$50/month" },
+    { label: "Multi-language (Spanish+)", price: "$100/language" },
   ],
 };
 
@@ -140,7 +150,7 @@ export const PRICING = {
 export const FAQS = [
   {
     q: "What does $200/month actually include?",
-    a: "Everything you need to have a professional website: custom design and development, up to 5 pages, hosting, domain connection, on-page SEO, Google Business profile optimization, and unlimited edits. There are no hidden fees.",
+    a: "Everything you need to have a professional website: custom design and development, up to 5 pages, hosting, domain connection, on-page SEO, Google Business profile optimization, and unlimited edits. There are no hidden fees and we handle everything for you.",
   },
   {
     q: "How long does it take to build the site?",
@@ -151,8 +161,8 @@ export const FAQS = [
     a: "You retain ownership of your domain, images, and assets provided to you. However, the website code is licensed for use only during an active subscription. If you cancel, access to the code will be revoked, but we will transfer the domain to you upon request."
   },
   {
-    q: "What if I'm not happy with the design?",
-    a: "We offer a 30-day money-back guarantee. If we can't deliver something you love in the first 30 days, you get a full refund — no questions asked.",
+    q: "Can you explain how the 30-day trial period works?",
+    a: "If we can't deliver a website design that meets your expectations, we offer a full refund for the amount you've paid up to that point. Once the design is approved and the site is live, there is a 30-day trial period. If you cancel during this window, the contract will be voided, but you’ll still be responsible for any charges already incurred. After the 30-day trial, refunds are no longer available, and the annual subscription will continue until the end of the 12-month commitment. Essentially, if the site never goes live, you'll get a full refund. If the site goes live and you cancel within 30 days, you won't be charged for future months, but the initial $200 for the first month is non-refundable.",
   },
   {
     q: "Why do you build custom-coded websites instead of using WordPress or drag-and-drop builders?",
@@ -229,7 +239,7 @@ export const VALUE_PROPS = [
     desc: "Zero down. Start with a professional website immediately.",
   },
   {
-    title: "30-Day Money-Back Guarantee",
+    title: "30-Day Trial Period",
     desc: "If you're not thrilled with the result in the first 30 days, we cancel the subscription — simple as that.",
   },
   {

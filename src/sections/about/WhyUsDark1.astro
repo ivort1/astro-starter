@@ -1,0 +1,132 @@
+---
+const points = [
+  {
+    num: "01",
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+      <circle cx="12" cy="9" r="2.5"/>
+    </svg>`,
+    label: "Local & In-House",
+    title: "Your Team is Right Here.",
+    body: "We're based in Fontana, CA. Every website we build is designed, developed, and maintained in-house by our US-based, English-speaking team. We don't subcontract work overseas or pass your project off to low-cost offshore labor. When you have a question or need a change, you're talking directly to the person who built your site — not a call center, not a ticket queue.",
+    quote: "Zero outsourcing. Your project stays with us.",
+  },
+  {
+    num: "02",
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="3" width="20" height="14" rx="2"/>
+      <path d="M8 21h8M12 17v4"/>
+    </svg>`,
+    label: "Fully Managed",
+    title: "Your Website Is Our Problem. Forever.",
+    body: "Think of us as a web developer on retainer. Once your site is live, we own every technical detail — hosting, uptime, security, edits, and updates. You will never log in to a backend dashboard, file a support ticket, or wonder if your site is down. You focus on running your business. We keep your website sharp, current, and performing. That's the deal.",
+    quote: "Set it and forget it. We've got it handled.",
+  },
+  {
+    num: "03",
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      <path d="M9 12l2 2 4-4"/>
+    </svg>`,
+    label: "Risk-Free Trial",
+    title: "Go Live With No Risk.",
+    body: "When your site launches, a 30-day trial begins. If you're not completely satisfied, cancel within those 30 days and your total spend is capped at what you've paid up to that point — no additional charges, no cancellation fees. You get to experience the full hands-free service before making any long-term commitment. We make this offer because we're confident in what we deliver.",
+    quote: "Your total spend is capped. No surprises, ever.",
+  },
+];
+---
+
+<section
+  class="py-28 px-6 relative"
+  style="background:var(--color-gcd-bg);border-top:3px solid var(--color-gcd-teal);"
+>
+  <!-- Faint teal glow at the top -->
+  <div
+    class="absolute top-0 left-0 right-0 h-64 pointer-events-none"
+    style="background:linear-gradient(to bottom, rgba(45,212,191,0.05) 0%, transparent 100%);"
+    aria-hidden="true"
+  ></div>
+
+  <div class="relative max-w-300 mx-auto">
+
+    <!-- Section header -->
+    <div class="mb-16">
+      <p class="text-[11px] font-semibold uppercase tracking-[4px] mb-4" style="color:var(--color-gcd-teal);">
+        Why Work With Us
+      </p>
+      <h2
+        class="text-[clamp(28px,4vw,48px)] font-bold leading-[1.15] max-w-[620px]"
+        style="color:var(--color-gcd-text);"
+      >
+        The GCD Difference
+      </h2>
+    </div>
+
+    <!-- Three points -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-0" style="border:1px solid var(--color-gcd-border);">
+      {points.map((point, i) => (
+        <div
+          class="relative flex flex-col p-10"
+          style={`background:var(--color-gcd-bg);${i < 2 ? 'border-right:1px solid var(--color-gcd-border);' : ''}border-bottom:1px solid var(--color-gcd-border);`}
+        >
+          <!-- Teal left accent line -->
+          <div
+            class="absolute left-0 top-10 bottom-10 w-0.5"
+            style="background:var(--color-gcd-teal);"
+            aria-hidden="true"
+          ></div>
+
+          <!-- Number -->
+          <div
+            class="text-[72px] font-bold leading-none mb-6 select-none"
+            style="color:rgba(45,212,191,0.12);letter-spacing:-2px;"
+            aria-hidden="true"
+          >
+            {point.num}
+          </div>
+
+          <!-- Icon -->
+          <div
+            class="w-12 h-12 flex items-center justify-center rounded-xl mb-6"
+            style="background:rgba(45,212,191,0.08);color:var(--color-gcd-teal);"
+          >
+            <Fragment set:html={point.icon} />
+          </div>
+
+          <!-- Label -->
+          <p
+            class="text-[11px] font-semibold uppercase tracking-[3px] mb-3"
+            style="color:var(--color-gcd-teal);"
+          >
+            {point.label}
+          </p>
+
+          <!-- Title -->
+          <h3
+            class="text-[22px] font-bold leading-snug mb-4"
+            style="color:var(--color-gcd-text);"
+          >
+            {point.title}
+          </h3>
+
+          <!-- Body -->
+          <p
+            class="text-[15px] leading-relaxed mb-8 flex-1"
+            style="color:var(--color-gcd-muted);"
+          >
+            {point.body}
+          </p>
+
+          <!-- Bottom quote -->
+          <div
+            class="px-4 py-3 rounded-lg text-[13px] font-semibold"
+            style="background:rgba(45,212,191,0.07);color:var(--color-gcd-teal);border:1px solid rgba(45,212,191,0.15);"
+          >
+            {point.quote}
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
