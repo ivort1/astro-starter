@@ -1,0 +1,43 @@
+---
+import arrowSvg from "../../assets/icons/arrow.svg?raw";
+import chatSvg from "../../assets/icons/chat.svg?raw";
+import checkSvg from "../../assets/icons/check.svg?raw";
+import chevronDownSvg from "../../assets/icons/chevron-down.svg?raw";
+import mailSvg from "../../assets/icons/mail.svg?raw";
+import mapPinSvg from "../../assets/icons/map-pin.svg?raw";
+import phoneSvg from "../../assets/icons/phone.svg?raw";
+import quoteSvg from "../../assets/icons/quote.svg?raw";
+import starSvg from "../../assets/icons/star.svg?raw";
+
+type IconName =
+  | "arrow"
+  | "chat"
+  | "check"
+  | "chevron-down"
+  | "mail"
+  | "map-pin"
+  | "phone"
+  | "quote"
+  | "star";
+
+interface Props {
+  name: IconName;
+  class?: string;
+}
+
+const { name, class: className } = Astro.props;
+
+const icons: Record<IconName, string> = {
+  arrow: arrowSvg,
+  chat: chatSvg,
+  check: checkSvg,
+  "chevron-down": chevronDownSvg,
+  mail: mailSvg,
+  "map-pin": mapPinSvg,
+  phone: phoneSvg,
+  quote: quoteSvg,
+  star: starSvg,
+};
+---
+
+<Fragment set:html={icons[name]} />

@@ -1,0 +1,42 @@
+---
+import { SITE } from "../../data/site.en";
+import Icon from "../../components/ui/Icon.astro";
+---
+
+<section class="py-24 px-6">
+  <div class="max-w-300 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+    <!-- Text -->
+    <div>
+      <p class="section-label">Our Story</p>
+      <h2 class="section-title">Meet Anthony Harding</h2>
+      <div class="divider"></div>
+      <p class="text-base text-gray-700 leading-relaxed mb-5">
+        Harding Construction was founded on a simple belief: every homeowner deserves a
+        contractor they can trust. Anthony Harding started this business not just as a career,
+        but as a mission — to bring honest, quality craftsmanship to families throughout the
+        Inland Empire.
+      </p>
+      <p class="text-base text-gray-700 leading-relaxed mb-5">
+        As a family-run operation, we keep things personal. When you call us, you talk to
+        Anthony directly. When we're working in your home, we treat it like our own. No pushy
+        sales tactics, no hidden fees, no subcontractors you've never met. Just real people
+        doing great work.
+      </p>
+      <p class="text-base text-gray-700 leading-relaxed mb-5">
+        We specialize in kitchen and bathroom remodels, but our skills extend to full home
+        renovations, flooring, electrical, painting, drywall, and much more. If it's in your
+        home, chances are we can build it, fix it, or make it beautiful.
+      </p>
+      <div class="mt-8">
+        <a href={SITE.phoneTel} class="btn-primary">
+          <Icon name="phone" /> Talk to Anthony
+        </a>
+      </div>
+    </div>
+
+    <!-- Image -->
+    <div class="bg-linear-to-br from-[#f5f0eb] to-[#e8e0d5] rounded-2xl aspect-square flex items-center justify-center">
+      <span class="text-7xl opacity-[0.08]">👷</span>
+    </div>
+  </div>
+</section>

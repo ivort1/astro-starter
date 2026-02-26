@@ -1,0 +1,61 @@
+---
+import { SITE, NAV_LINKS } from "../../data/site.en";
+import Icon from "../../components/ui/Icon.astro";
+
+const copyrightYear = 2026 === new Date().getFullYear() ? "2026" : `2026 - ${new Date().getFullYear()}`;
+---
+
+<footer class="bg-gray-100 text-gray-700 pt-20 pb-8 px-6">
+  <div class="max-w-300 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
+    <!-- Brand -->
+    <div>
+      <svg class="w-10 mb-4 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+        <path d="M 50 10 L 10 45 L 18 52 L 50 24 L 82 52 L 90 45 Z" fill="currentColor" />
+        <rect x="26" y="48" width="12" height="42" fill="currentColor" />
+        <rect x="62" y="48" width="12" height="42" fill="currentColor" />
+        <rect x="26" y="63" width="48" height="12" fill="currentColor" />
+      </svg>
+
+      <div class="font-display text-2xl font-bold mb-4">Harding Construction</div>
+      <p class="text-sm leading-relaxed max-w-70">
+        Family-owned general contractor in Upland, CA. Specializing in kitchen and bathroom
+        remodels, serving the Inland Empire with pride since day one.
+      </p>
+    </div>
+
+    <!-- Pages -->
+    <div>
+      <div class="text-xs font-bold tracking-[2px] uppercase mb-5">Pages</div>
+      <div class="flex flex-col gap-3">
+        {NAV_LINKS.map((link) => (
+          <a href={link.href} class="text-sm no-underline hover:text-black transition-colors duration-200">
+            {link.label}
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div>
+      <div class="text-xs font-bold tracking-[2px] uppercase mb-5">Get In Touch</div>
+      <div class="flex flex-col gap-3">
+        <a href={SITE.phoneTel} class="text-sm no-underline hover:text-black transition-colors flex items-center gap-2">
+          <Icon name="phone" /> {SITE.phoneFmt}
+        </a>
+        <a href={SITE.textSms} class="text-sm no-underline hover:text-black transition-colors flex items-center gap-2">
+          <Icon name="chat" /> Text: {SITE.textFmt}
+        </a>
+        <a href={SITE.emailHref} class="text-sm no-underline hover:text-black transition-colors flex items-center gap-2 break-all">
+          <Icon name="mail" /> {SITE.email}
+        </a>
+        <span class="text-sm flex items-center gap-2">
+          <Icon name="map-pin" /> {SITE.address}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-300 mx-auto mt-12 pt-8 border-t border-gray-300 flex flex-col sm:flex-row justify-between items-center gap-3 text-[13px]">
+    <span>© {copyrightYear} Harding Construction. All rights reserved.</span>
+  </div>
+</footer>

@@ -1,0 +1,26 @@
+---
+import { SITE } from "../../data/site.en";
+import Icon from "../../components/ui/Icon.astro";
+---
+
+<section class="bg-dark text-white py-20 px-6 text-center">
+  <div class="max-w-300 mx-auto">
+    <p class="text-[11px] font-semibold uppercase tracking-[4px] mb-4 text-white/40">
+      Let's Build Something Beautiful
+    </p>
+    <h2 class="font-display font-semibold leading-tight mb-5 text-white" style="font-size: clamp(32px, 5vw, 48px);">
+      Ready to Transform Your Home?
+    </h2>
+    <p class="text-[17px] text-white/60 leading-relaxed mb-10 max-w-120 mx-auto">
+      Get a free, no-obligation estimate. Call Anthony today and let's discuss your vision.
+    </p>
+    <div class="flex gap-4 justify-center flex-wrap">
+      <a href={SITE.phoneTel} class="btn-primary">
+        <Icon name="phone" /> Call {SITE.phoneFmt}
+      </a>
+      <a href="/contact" class="btn-white">
+        Request a Quote <Icon name="arrow" />
+      </a>
+    </div>
+  </div>
+</section>

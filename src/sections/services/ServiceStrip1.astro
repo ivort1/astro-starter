@@ -1,0 +1,13 @@
+---
+import { SERVICE_STRIP } from "../../data/site.en";
+---
+
+<div class="bg-dark text-white py-14 px-6 overflow-hidden">
+  <div class="flex gap-12 justify-center flex-wrap max-w-[1200px] mx-auto">
+    {SERVICE_STRIP.map((item) => (
+      <span class="text-[13px] font-medium tracking-[2px] uppercase opacity-50 whitespace-nowrap">
+        {item}
+      </span>
+    ))}
+  </div>
+</div>

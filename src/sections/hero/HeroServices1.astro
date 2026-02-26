@@ -1,0 +1,22 @@
+---
+import { SITE } from "../../data/site.en";
+import Icon from "../../components/ui/Icon.astro";
+---
+
+<section class="pt-40 pb-20 px-6 bg-gray-100 text-center">
+  <div class="max-w-[800px] mx-auto">
+    <p class="section-label animate-fade-up">Our Services</p>
+    <h1 class="font-display font-semibold text-black leading-tight animate-fade-up-d1" style="font-size: clamp(36px, 5vw, 56px);">
+      Everything Your Home Needs.<br />One Contractor.
+    </h1>
+    <p class="section-subtitle mx-auto mt-5 animate-fade-up-d2">
+      From kitchen and bathroom remodels to full home renovations — we handle every trade so
+      you don't have to juggle multiple contractors.
+    </p>
+    <div class="mt-8 animate-fade-up-d3">
+      <a href={SITE.phoneTel} class="btn-primary">
+        <Icon name="phone" /> Get a Free Estimate
+      </a>
+    </div>
+  </div>
+</section>

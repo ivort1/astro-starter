@@ -1,0 +1,55 @@
+---
+import { HOME_SERVICES } from "../../data/site.en";
+import Icon from "../../components/ui/Icon.astro";
+---
+
+<section class="py-24 px-6 bg-gray-100">
+  <div class="max-w-[1200px] mx-auto">
+    <div class="text-center mb-14">
+      <p class="section-label">What We Do</p>
+      <h2 class="section-title">Remodeling Services for Every Room</h2>
+      <p class="section-subtitle mx-auto">
+        From a single bathroom refresh to a full home transformation — we've got you covered.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {HOME_SERVICES.map((service) => (
+        <div
+          class:list={[
+            "p-10 rounded-xl border transition-all duration-300 relative overflow-hidden group",
+            service.featured
+              ? "bg-dark text-white border-dark"
+              : "bg-white border-gray-100 hover:border-gray-300",
+          ]}
+          style={!service.featured ? "box-shadow: none;" : ""}
+        >
+          {service.featured && (
+            <span
+              class="absolute top-5 right-5 text-[10px] font-bold tracking-wider uppercase text-white px-3 py-1 rounded-full"
+              style="background: var(--color-accent);"
+            >
+              Specialty
+            </span>
+          )}
+          <div
+            class:list={[
+              "w-12 h-12 rounded-[10px] flex items-center justify-center text-xl mb-6",
+              service.featured ? "bg-white/10" : "bg-gray-100",
+            ]}
+          >
+            {service.icon}
+          </div>
+          <h3 class="font-display text-[22px] font-semibold mb-3">{service.title}</h3>
+          <p class:list={["text-sm leading-relaxed", service.featured ? "text-white/70" : "text-gray-700"]}>
+            {service.desc}
+          </p>
+        </div>
+      ))}
+    </div>
+
+    <div class="text-center mt-12">
+      <a href="/services" class="btn-ghost">View All Services <Icon name="arrow" /></a>
+    </div>
+  </div>
+</section>
