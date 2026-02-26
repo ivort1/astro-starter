@@ -1,0 +1,132 @@
+---
+import { PORTFOLIO } from "../../data/site.gcd";
+---
+
+<section class="py-24 px-6" style="background:var(--color-gcd-bg);">
+  <div class="max-w-300 mx-auto">
+
+    <!-- Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {PORTFOLIO.map((project) => (
+        <article
+          class="group flex flex-col rounded-xl overflow-hidden transition-transform duration-300 hover:-translate-y-1"
+          style="background:var(--color-gcd-surface);border:1px solid var(--color-gcd-border);"
+        >
+          <!-- Screenshot / placeholder area -->
+          <div
+            class="relative overflow-hidden"
+            style="height:220px;background:var(--color-gcd-bg);"
+          >
+            {project.image ? (
+              <img
+                src={project.image}
+                alt={`${project.client} website screenshot`}
+                class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            ) : (
+              /* Placeholder — replace image path in site.gcd.ts when screenshot is ready */
+              <div class="w-full h-full flex flex-col items-center justify-center gap-3 select-none" style="background:var(--color-gcd-bg);">
+                <!-- Simulated browser chrome -->
+                <div
+                  class="w-[85%] rounded-lg overflow-hidden"
+                  style="border:1px solid var(--color-gcd-border);"
+                >
+                  <div
+                    class="flex items-center gap-1.5 px-3 py-2"
+                    style="background:var(--color-gcd-surface);border-bottom:1px solid var(--color-gcd-border);"
+                  >
+                    <div class="w-2 h-2 rounded-full" style="background:#ff5f57;"></div>
+                    <div class="w-2 h-2 rounded-full" style="background:#ffbd2e;"></div>
+                    <div class="w-2 h-2 rounded-full" style="background:#28c840;"></div>
+                    <div class="flex-1 mx-2 px-2 py-0.5 rounded text-[9px] text-center truncate" style="background:var(--color-gcd-bg);color:var(--color-gcd-muted);">
+                      screenshot coming soon
+                    </div>
+                  </div>
+                  <div class="p-3" style="background:#0f0f0f;">
+                    <!-- Simulated page layout -->
+                    <div class="w-3/4 h-2 rounded mb-2" style={`background:${project.accentColor};opacity:0.5;`}></div>
+                    <div class="w-full h-2.5 rounded mb-1.5" style="background:rgba(255,255,255,0.25);"></div>
+                    <div class="w-4/5 h-2.5 rounded mb-3" style="background:rgba(255,255,255,0.15);"></div>
+                    <div class="flex gap-2 mb-3">
+                      <div class="w-16 h-5 rounded" style={`background:${project.accentColor};opacity:0.7;`}></div>
+                      <div class="w-16 h-5 rounded" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);"></div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-1.5">
+                      {[0,1,2].map(() => (
+                        <div class="h-8 rounded" style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);"></div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            <!-- Accent top border -->
+            <div
+              class="absolute top-0 left-0 right-0 h-0.5"
+              style={`background:${project.accentColor};`}
+            ></div>
+          </div>
+
+          <!-- Card content -->
+          <div class="flex flex-col flex-1 p-6">
+            <div class="flex items-start justify-between gap-3 mb-3">
+              <div>
+                <h3 class="text-[17px] font-semibold leading-snug" style="color:var(--color-gcd-text);">
+                  {project.client}
+                </h3>
+                <p class="text-[13px] mt-0.5" style="color:var(--color-gcd-muted);">
+                  {project.type} · {project.location}
+                </p>
+              </div>
+              {project.url !== '#' && (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg transition-colors duration-200 no-underline"
+                  style="background:var(--color-gcd-bg);color:var(--color-gcd-muted);border:1px solid var(--color-gcd-border);"
+                  aria-label={`Visit ${project.client} website`}
+                >
+                  <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
+              )}
+            </div>
+
+            <p class="text-[14px] leading-relaxed mb-4 flex-1" style="color:var(--color-gcd-muted);">
+              {project.description}
+            </p>
+
+            <!-- Result badge -->
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[12px] font-medium mb-4 self-start"
+              style={`background:${project.accentColor}18;color:${project.accentColor};border:1px solid ${project.accentColor}30;`}
+            >
+              <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M22 4L12 14.01l-3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              {project.result}
+            </div>
+
+            <!-- Tags -->
+            <div class="flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
+                <span
+                  class="px-2.5 py-1 rounded text-[11px] font-medium"
+                  style="background:var(--color-gcd-bg);color:var(--color-gcd-muted);border:1px solid var(--color-gcd-border);"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+
+  </div>
+</section>

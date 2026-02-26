@@ -1,0 +1,138 @@
+---
+import { SERVICE_OPTIONS } from "../../data/site.gcd";
+---
+
+<form
+  name="gcd-contact"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  class="flex flex-col gap-5"
+>
+  <!-- Netlify hidden fields -->
+  <input type="hidden" name="form-name" value="gcd-contact" />
+  <p class="hidden" aria-hidden="true">
+    <label>Don't fill this out: <input name="bot-field" /></label>
+  </p>
+
+  <!-- Name + Email -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+    <div>
+      <label for="gcd-name" class="block text-[13px] font-medium mb-2" style="color:var(--color-gcd-muted);">
+        Your Name <span style="color:var(--color-gcd-teal);">*</span>
+      </label>
+      <input
+        id="gcd-name"
+        type="text"
+        name="name"
+        required
+        placeholder="John Smith"
+        class="w-full rounded-lg px-4 py-3.5 text-[15px] outline-none transition-colors duration-200"
+        style="background:var(--color-gcd-surface);color:var(--color-gcd-text);border:1.5px solid var(--color-gcd-border);"
+      />
+    </div>
+    <div>
+      <label for="gcd-email" class="block text-[13px] font-medium mb-2" style="color:var(--color-gcd-muted);">
+        Email Address <span style="color:var(--color-gcd-teal);">*</span>
+      </label>
+      <input
+        id="gcd-email"
+        type="email"
+        name="email"
+        required
+        placeholder="john@example.com"
+        class="w-full rounded-lg px-4 py-3.5 text-[15px] outline-none transition-colors duration-200"
+        style="background:var(--color-gcd-surface);color:var(--color-gcd-text);border:1.5px solid var(--color-gcd-border);"
+      />
+    </div>
+  </div>
+
+  <!-- Business + Phone -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+    <div>
+      <label for="gcd-business" class="block text-[13px] font-medium mb-2" style="color:var(--color-gcd-muted);">
+        Business Name
+      </label>
+      <input
+        id="gcd-business"
+        type="text"
+        name="business"
+        placeholder="Smith Roofing LLC"
+        class="w-full rounded-lg px-4 py-3.5 text-[15px] outline-none transition-colors duration-200"
+        style="background:var(--color-gcd-surface);color:var(--color-gcd-text);border:1.5px solid var(--color-gcd-border);"
+      />
+    </div>
+    <div>
+      <label for="gcd-phone" class="block text-[13px] font-medium mb-2" style="color:var(--color-gcd-muted);">
+        Phone Number
+      </label>
+      <input
+        id="gcd-phone"
+        type="tel"
+        name="phone"
+        placeholder="(555) 000-0000"
+        class="w-full rounded-lg px-4 py-3.5 text-[15px] outline-none transition-colors duration-200"
+        style="background:var(--color-gcd-surface);color:var(--color-gcd-text);border:1.5px solid var(--color-gcd-border);"
+      />
+    </div>
+  </div>
+
+  <!-- Service -->
+  <div>
+    <label for="gcd-service" class="block text-[13px] font-medium mb-2" style="color:var(--color-gcd-muted);">
+      What are you looking for?
+    </label>
+    <select
+      id="gcd-service"
+      name="service"
+      class="w-full rounded-lg px-4 py-3.5 text-[15px] outline-none transition-colors duration-200 cursor-pointer"
+      style="background:var(--color-gcd-surface);color:var(--color-gcd-text);border:1.5px solid var(--color-gcd-border);"
+    >
+      <option value="" disabled selected>Select a service...</option>
+      {SERVICE_OPTIONS.map((opt) => (
+        <option value={opt}>{opt}</option>
+      ))}
+    </select>
+  </div>
+
+  <!-- Message -->
+  <div>
+    <label for="gcd-message" class="block text-[13px] font-medium mb-2" style="color:var(--color-gcd-muted);">
+      Tell us about your project
+    </label>
+    <textarea
+      id="gcd-message"
+      name="message"
+      rows={5}
+      placeholder="Share any details about your business, current website situation, or what you're hoping to achieve..."
+      class="w-full rounded-lg px-4 py-3.5 text-[15px] outline-none transition-colors duration-200 resize-vertical"
+      style="background:var(--color-gcd-surface);color:var(--color-gcd-text);border:1.5px solid var(--color-gcd-border);"
+    ></textarea>
+  </div>
+
+  <!-- Submit -->
+  <button
+    type="submit"
+    class="inline-flex items-center justify-center gap-2.5 w-full rounded-lg py-4 text-[15px] font-semibold cursor-pointer border-none transition-all duration-200 hover:-translate-y-px mt-1"
+    style="background:var(--color-gcd-teal);color:#0D0D0D;"
+  >
+    Send Message
+    <svg class="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <p class="text-[13px] text-center" style="color:var(--color-gcd-muted);">
+    Free consultation, no pressure or obligation.
+  </p>
+</form>
+
+<style>
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--color-gcd-teal) !important;
+  }
+  select option {
+    background: var(--color-gcd-surface);
+    color: var(--color-gcd-text);
+  }
+</style>

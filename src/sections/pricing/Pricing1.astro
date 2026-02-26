@@ -1,0 +1,108 @@
+---
+import { PRICING } from "../../data/site.gcd";
+---
+
+<section class="py-28 px-6" style="background:var(--color-gcd-surface);">
+  <div class="max-w-300 mx-auto">
+
+    <!-- Header -->
+    <div class="text-center max-w-140 mx-auto mb-16">
+      <p class="text-[11px] font-semibold uppercase tracking-[4px] mb-4" style="color:var(--color-gcd-teal);">
+        Simple Pricing
+      </p>
+      <h2 class="text-[clamp(28px,4vw,42px)] font-bold leading-[1.2] mb-5" style="color:var(--color-gcd-text);">
+        One Plan. Everything Included.
+      </h2>
+      <p class="text-[17px] leading-relaxed" style="color:var(--color-gcd-muted);">
+        No surprises, no tiers, no upsells. One straightforward price for a complete professional web presence.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-240 mx-auto items-start">
+
+      <!-- Pricing Card -->
+      <div
+        class="rounded-2xl p-10"
+        style="background:var(--color-gcd-bg);border:1px solid var(--color-gcd-border);"
+      >
+        <!-- Price -->
+        <div class="flex items-end gap-1 mb-2">
+          <span class="text-[clamp(48px,6vw,72px)] font-bold leading-none" style="color:var(--color-gcd-text);">
+            {PRICING.price}
+          </span>
+          <span class="text-xl font-medium mb-2" style="color:var(--color-gcd-muted);">
+            {PRICING.period}
+          </span>
+        </div>
+
+        <p class="text-[15px] mb-1" style="color:var(--color-gcd-teal);font-weight:600;">
+          {PRICING.upfront}
+        </p>
+        <p class="text-[13px] mb-8" style="color:var(--color-gcd-muted);">
+          {PRICING.commitment}
+        </p>
+
+        <!-- CTA -->
+        <a
+          href="/gcd/contact"
+          class="flex items-center justify-center gap-2.5 w-full rounded-lg py-4 text-[15px] font-semibold no-underline transition-all duration-200 hover:-translate-y-px mb-4"
+          style="background:var(--color-gcd-teal);color:#0D0D0D;"
+        >
+          Start Your Project
+          <svg class="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+        <!-- Guarantee badge -->
+        <p class="text-center text-[13px]" style="color:var(--color-gcd-muted);">
+          <svg class="inline w-3.5 h-3.5 mr-1 -mt-0.5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          {PRICING.guarantee}
+        </p>
+      </div>
+
+      <!-- Included list + Add-ons -->
+      <div class="flex flex-col gap-8">
+
+        <!-- Included -->
+        <div>
+          <p class="text-xs font-bold tracking-[2px] uppercase mb-5" style="color:var(--color-gcd-muted);">
+            What's Included
+          </p>
+          <ul class="flex flex-col gap-3 list-none m-0 p-0">
+            {PRICING.included.map((item) => (
+              <li class="flex items-start gap-3 text-[15px]" style="color:var(--color-gcd-text);">
+                <svg class="w-5 h-5 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="stroke:var(--color-gcd-teal);"/>
+                </svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Add-ons -->
+        <div>
+          <p class="text-xs font-bold tracking-[2px] uppercase mb-5" style="color:var(--color-gcd-muted);">
+            Optional Add-Ons
+          </p>
+          <div class="flex flex-col gap-3">
+            {PRICING.addons.map((addon) => (
+              <div
+                class="flex items-center justify-between py-3 px-4 rounded-lg text-[14px]"
+                style="background:var(--color-gcd-bg);border:1px solid var(--color-gcd-border);"
+              >
+                <span style="color:var(--color-gcd-text);">{addon.label}</span>
+                <span class="font-semibold" style="color:var(--color-gcd-teal);">{addon.price}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>

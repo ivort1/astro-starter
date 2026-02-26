@@ -1,0 +1,50 @@
+---
+import { SITE } from "../../data/site.gcd";
+---
+
+<section class="py-24 px-6" style="background:var(--color-gcd-surface);">
+  <div
+    class="max-w-300 mx-auto rounded-2xl px-8 py-16 md:px-16 text-center relative overflow-hidden"
+    style="background:var(--color-gcd-bg);border:1px solid var(--color-gcd-border);"
+  >
+    <!-- Teal glow -->
+    <div
+      class="absolute inset-0 pointer-events-none"
+      style="background:radial-gradient(ellipse at 50% 0%, rgba(45,212,191,0.07) 0%, transparent 60%);"
+      aria-hidden="true"
+    ></div>
+
+    <div class="relative">
+      <p class="text-[11px] font-semibold uppercase tracking-[4px] mb-4" style="color:var(--color-gcd-teal);">
+        Ready to Get Started?
+      </p>
+      <h2 class="text-[clamp(28px,4vw,48px)] font-bold leading-[1.2] mb-5 max-w-[600px] mx-auto" style="color:var(--color-gcd-text);">
+        Let's Build Something You're Proud Of
+      </h2>
+      <p class="text-[17px] leading-relaxed max-w-[500px] mx-auto mb-10" style="color:var(--color-gcd-muted);">
+        No upfront cost. No long commitments after year one. Just a great website that brings in real customers.
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-4">
+        <a
+          href="/gcd/contact"
+          class="inline-flex items-center gap-2.5 rounded-md px-8 py-4 text-[15px] font-semibold no-underline transition-all duration-200 hover:-translate-y-px"
+          style="background:var(--color-gcd-teal);color:#0D0D0D;"
+        >
+          Start Your Project
+          <svg class="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+
+        <a
+          href={SITE.emailHref}
+          class="inline-flex items-center gap-2.5 rounded-md px-8 py-4 text-[15px] font-semibold no-underline transition-all duration-200"
+          style="color:var(--color-gcd-text);border:1.5px solid var(--color-gcd-border);"
+        >
+          Send Us an Email
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

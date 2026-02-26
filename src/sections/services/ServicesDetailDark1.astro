@@ -1,0 +1,79 @@
+---
+import { ALL_SERVICES, VALUE_PROPS } from "../../data/site.gcd";
+
+const featured = ALL_SERVICES.filter((s) => s.featured);
+const rest      = ALL_SERVICES.filter((s) => !s.featured);
+---
+
+<section class="py-24 px-6" style="background:var(--color-gcd-bg);">
+  <div class="max-w-300 mx-auto">
+
+    <!-- Core Services -->
+    <div class="mb-16">
+      <p class="text-xs font-bold tracking-[2px] uppercase mb-8" style="color:var(--color-gcd-muted);">Core Services</p>
+      <div
+        class="grid grid-cols-1 md:grid-cols-3"
+        style="border-top:1px solid var(--color-gcd-border);border-left:1px solid var(--color-gcd-border);"
+      >
+        {featured.map((service) => (
+          <div
+            class="p-8"
+            style="background:var(--color-gcd-bg);border-right:1px solid var(--color-gcd-border);border-bottom:1px solid var(--color-gcd-border);"
+          >
+            <div
+              class="w-2 h-2 rounded-full mb-6"
+              style="background:var(--color-gcd-teal);"
+              aria-hidden="true"
+            ></div>
+            <h3 class="text-[20px] font-bold mb-3" style="color:var(--color-gcd-text);">
+              {service.title}
+            </h3>
+            <p class="text-[15px] leading-relaxed" style="color:var(--color-gcd-muted);">
+              {service.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Also Available -->
+    {rest.length > 0 && (
+      <div>
+        <p class="text-xs font-bold tracking-[2px] uppercase mb-8 mt-16" style="color:var(--color-gcd-muted);">Also Available</p>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+          style="border-top:1px solid var(--color-gcd-border);border-left:1px solid var(--color-gcd-border);"
+        >
+          {rest.map((service) => (
+            <div
+              class="p-7"
+              style="background:var(--color-gcd-bg);border-right:1px solid var(--color-gcd-border);border-bottom:1px solid var(--color-gcd-border);"
+            >
+              <h3 class="text-[16px] font-semibold mb-2" style="color:var(--color-gcd-text);">
+                {service.title}
+              </h3>
+              <p class="text-[14px] leading-relaxed" style="color:var(--color-gcd-muted);">
+                {service.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <!-- Value props strip -->
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-20 pt-16"
+      style="border-top:1px solid var(--color-gcd-border);"
+    >
+      {VALUE_PROPS.map((prop) => (
+        <div>
+          <div class="w-8 h-0.5 mb-5" style="background:var(--color-gcd-teal);"></div>
+          <h3 class="text-[16px] font-semibold mb-2" style="color:var(--color-gcd-text);">{prop.title}</h3>
+          <p class="text-[14px] leading-relaxed" style="color:var(--color-gcd-muted);">{prop.desc}</p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

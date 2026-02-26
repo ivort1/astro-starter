@@ -1,0 +1,238 @@
+---
+import { SITE, NAV_LINKS } from "../../data/site.gcd";
+
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="fixed top-0 left-0 right-0 z-100 border-b" style="background:var(--color-gcd-bg);border-color:var(--color-gcd-border);" id="nav" role="navigation" aria-label="Main navigation">
+  <div class="flex items-center justify-between max-w-400 mx-auto py-3.5 px-4 lg:py-4 lg:px-8">
+
+    <!-- Logo -->
+    <a href="/gcd" class="no-underline whitespace-nowrap flex items-center gap-2.5">
+      <span class="text-[1.25rem] font-bold tracking-tight" style="color:var(--color-gcd-text);">
+        Golden Coast
+        <span style="color:var(--color-gcd-teal);">Digital</span>
+      </span>
+    </a>
+
+    <!-- Mobile Actions -->
+    <div class="flex items-center gap-2 xl:hidden">
+      <a
+        href="/gcd/contact"
+        class="flex items-center gap-1.5 py-2 px-3 text-sm font-semibold rounded-md no-underline transition-colors duration-200 active:scale-[0.98]"
+        style="background:var(--color-gcd-teal);color:#0D0D0D;"
+      >
+        Get Started
+      </a>
+
+      <button
+        class="nav-toggle flex flex-col justify-center gap-1.25 w-11 h-11 p-2.5 bg-transparent border-none cursor-pointer [-webkit-tap-highlight-color:transparent]"
+        id="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="nav-mobile-menu"
+        aria-label="Open menu"
+      >
+        <span class="nav-toggle-bar block w-6 h-0.5 rounded-sm transition-all duration-300" style="background:var(--color-gcd-text);" aria-hidden="true"></span>
+        <span class="nav-toggle-bar block w-6 h-0.5 rounded-sm transition-all duration-300" style="background:var(--color-gcd-text);" aria-hidden="true"></span>
+        <span class="nav-toggle-bar block w-6 h-0.5 rounded-sm transition-all duration-300" style="background:var(--color-gcd-text);" aria-hidden="true"></span>
+      </button>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <div class="hidden xl:flex xl:items-center" id="nav-menu">
+      <ul class="flex items-center gap-8 list-none m-0 p-0">
+        {NAV_LINKS.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class:list={[
+                'relative text-[0.9375rem] font-medium no-underline py-2 transition-colors duration-200',
+                'after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:transition-all after:duration-200',
+                currentPath === link.href || (link.href !== '/gcd' && currentPath.startsWith(link.href))
+                  ? 'after:w-full'
+                  : '',
+              ]}
+              style={
+                currentPath === link.href || (link.href !== '/gcd' && currentPath.startsWith(link.href))
+                  ? `color:var(--color-gcd-text);--tw-after-bg:var(--color-gcd-teal);`
+                  : `color:var(--color-gcd-muted);`
+              }
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <div class="flex items-center gap-3 ml-8">
+        <a
+          href={SITE.emailHref}
+          class="inline-flex items-center gap-2 text-[0.9375rem] font-medium no-underline transition-colors duration-200"
+          style="color:var(--color-gcd-muted);"
+        >
+          {SITE.email}
+        </a>
+
+        <a
+          href="/gcd/contact"
+          class="inline-flex items-center gap-2.5 rounded-md px-6 py-2.5 text-[0.9375rem] font-semibold no-underline transition-all duration-200 hover:-translate-y-px"
+          style="background:var(--color-gcd-teal);color:#0D0D0D;"
+        >
+          Get Started
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="nav-overlay fixed inset-0 bg-black/70 opacity-0 invisible transition-all duration-300 z-98" id="nav-overlay"></div>
+
+  <!-- Mobile Slide-out Menu -->
+  <div
+    class="nav-mobile-menu fixed top-0 right-0 bottom-0 w-75 max-w-[85vw] transition-transform duration-300 z-99 flex flex-col overflow-y-auto"
+    style="background:var(--color-gcd-surface);border-left:1px solid var(--color-gcd-border);"
+    id="nav-mobile-menu"
+  >
+    <!-- Close Button -->
+    <div class="flex items-center justify-end py-4 px-6 shrink-0">
+      <button
+        class="flex items-center justify-center w-11 h-11 -mr-2 bg-transparent border-none rounded-lg cursor-pointer transition-colors duration-200 [-webkit-tap-highlight-color:transparent]"
+        style="color:var(--color-gcd-muted);"
+        id="nav-close"
+        type="button"
+        aria-label="Close menu"
+      >
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <ul class="list-none m-0 py-2 px-0 flex-1">
+      {NAV_LINKS.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            class="block py-4 px-6 text-[1.0625rem] font-medium no-underline transition-colors duration-200"
+            style={
+              currentPath === link.href || (link.href !== '/gcd' && currentPath.startsWith(link.href))
+                ? `color:var(--color-gcd-text);font-weight:600;`
+                : `color:var(--color-gcd-muted);`
+            }
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <!-- Mobile CTA -->
+    <div class="p-6 shrink-0" style="border-top:1px solid var(--color-gcd-border);">
+      <a
+        href="/gcd/contact"
+        class="flex items-center justify-center gap-2 w-full py-3.5 px-4 text-[0.9375rem] font-semibold rounded-lg no-underline transition-colors duration-200 active:scale-[0.98]"
+        style="background:var(--color-gcd-teal);color:#0D0D0D;"
+      >
+        Get Started
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Spacer for fixed nav -->
+<div class="h-15 sm:h-16 lg:h-18"></div>
+
+<style>
+  /* Nav link hover — desktop */
+  #nav-menu a[href]:not(.btn-teal):hover {
+    color: var(--color-gcd-text) !important;
+  }
+
+  /* After-underline uses teal */
+  #nav-menu a::after {
+    background: var(--color-gcd-teal);
+  }
+  #nav-menu a:hover::after {
+    width: 100% !important;
+  }
+
+  /* Mobile nav link hover */
+  #nav-mobile-menu a[href]:hover {
+    color: var(--color-gcd-text) !important;
+    background: rgba(255,255,255,0.03);
+  }
+
+  .nav-toggle.is-open .nav-toggle-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .nav-toggle.is-open .nav-toggle-bar:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle.is-open .nav-toggle-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .nav-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-mobile-menu {
+    transform: translateX(100%);
+  }
+  .nav-mobile-menu.is-open {
+    transform: translateX(0);
+  }
+</style>
+
+<script>
+  const toggle   = document.getElementById('nav-toggle')      as HTMLButtonElement | null;
+  const closeBtn = document.getElementById('nav-close')       as HTMLButtonElement | null;
+  const mobileMenu = document.getElementById('nav-mobile-menu') as HTMLDivElement  | null;
+  const overlay  = document.getElementById('nav-overlay')     as HTMLDivElement    | null;
+
+  if (toggle && mobileMenu && overlay) {
+    function openMenu(): void {
+      toggle!.classList.add('is-open');
+      toggle!.setAttribute('aria-expanded', 'true');
+      toggle!.setAttribute('aria-label', 'Close menu');
+      mobileMenu!.classList.add('is-open');
+      overlay!.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      if (closeBtn) closeBtn.focus();
+    }
+
+    function closeMenu(): void {
+      toggle!.classList.remove('is-open');
+      toggle!.setAttribute('aria-expanded', 'false');
+      toggle!.setAttribute('aria-label', 'Open menu');
+      mobileMenu!.classList.remove('is-open');
+      overlay!.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    toggle.addEventListener('click', () => toggle.classList.contains('is-open') ? closeMenu() : openMenu());
+    if (closeBtn) closeBtn.addEventListener('click', () => { closeMenu(); toggle.focus(); });
+    overlay.addEventListener('click', closeMenu);
+
+    document.addEventListener('keydown', (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) {
+        closeMenu();
+        toggle.focus();
+      }
+    });
+
+    window.matchMedia('(min-width: 1024px)').addEventListener('change', (e: MediaQueryListEvent) => {
+      if (e.matches) closeMenu();
+    });
+
+    mobileMenu.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+  }
+</script>

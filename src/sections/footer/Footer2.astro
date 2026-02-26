@@ -1,0 +1,70 @@
+---
+import { SITE, NAV_LINKS } from "../../data/site.gcd";
+import Icon from "../../components/ui/Icon.astro";
+
+const year = new Date().getFullYear();
+const copyrightYear = year === 2026 ? "2026" : `2026–${year}`;
+---
+
+<footer class="pt-20 pb-8 px-6" style="background:var(--color-gcd-surface);border-top:1px solid var(--color-gcd-border);">
+  <div class="max-w-300 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
+
+    <!-- Brand -->
+    <div>
+      <div class="text-xl font-bold mb-4" style="color:var(--color-gcd-text);">
+        Golden Coast <span style="color:var(--color-gcd-teal);">Digital</span>
+      </div>
+      <p class="text-sm leading-relaxed max-w-70" style="color:var(--color-gcd-muted);">
+        Fast, modern websites for small businesses. $200/month, no upfront cost.
+        Built to rank, built to convert.
+      </p>
+    </div>
+
+    <!-- Pages -->
+    <div>
+      <div class="text-xs font-bold tracking-[2px] uppercase mb-5" style="color:var(--color-gcd-muted);">Pages</div>
+      <div class="flex flex-col gap-3">
+        {NAV_LINKS.map((link) => (
+          <a
+            href={link.href}
+            class="text-sm no-underline transition-colors duration-200"
+            style="color:var(--color-gcd-muted);"
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div>
+      <div class="text-xs font-bold tracking-[2px] uppercase mb-5" style="color:var(--color-gcd-muted);">Get In Touch</div>
+      <div class="flex flex-col gap-3">
+        <a
+          href={SITE.phoneTel}
+          class="text-sm no-underline transition-colors flex items-center gap-2"
+          style="color:var(--color-gcd-muted);"
+        >
+          <Icon name="phone" /> {SITE.phoneFmt}
+        </a>
+        <a
+          href={SITE.emailHref}
+          class="text-sm no-underline transition-colors flex items-center gap-2 break-all"
+          style="color:var(--color-gcd-muted);"
+        >
+          <Icon name="mail" /> {SITE.email}
+        </a>
+        <span class="text-sm flex items-center gap-2" style="color:var(--color-gcd-muted);">
+          <Icon name="map-pin" /> {SITE.address}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="max-w-300 mx-auto mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-3 text-[13px]"
+    style="border-top:1px solid var(--color-gcd-border);color:var(--color-gcd-muted);"
+  >
+    <span>© {copyrightYear} Golden Coast Digital. All rights reserved.</span>
+  </div>
+</footer>
