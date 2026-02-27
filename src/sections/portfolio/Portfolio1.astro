@@ -1,5 +1,11 @@
 ---
+import { Image } from 'astro:assets';
 import { PORTFOLIO } from "../../data/site.gcd";
+
+const clientImages = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/clients/*.{jpg,jpeg,png,webp,avif}',
+  { eager: true }
+);
 ---
 
 <section class="py-24 px-6" style="background:var(--color-gcd-bg);">
@@ -17,12 +23,13 @@ import { PORTFOLIO } from "../../data/site.gcd";
             class="relative overflow-hidden"
             style="height:220px;background:var(--color-gcd-bg);"
           >
-            {project.image ? (
-              <img
-                src={project.image}
+            {project.image && clientImages[project.image] ? (
+              <Image
+                src={clientImages[project.image].default}
                 alt={`${project.client} website screenshot`}
                 class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                loading="lazy"
+                widths={[400, 800]}
+                sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
               />
             ) : (
               /* Placeholder — replace image path in site.gcd.ts when screenshot is ready */
@@ -85,7 +92,7 @@ import { PORTFOLIO } from "../../data/site.gcd";
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg transition-colors duration-200 no-underline"
+                  class="shrink-0 w-8 h-8 flex items-center justify-center rounded-lg transition-colors duration-200 no-underline"
                   style="background:var(--color-gcd-bg);color:var(--color-gcd-muted);border:1px solid var(--color-gcd-border);"
                   aria-label={`Visit ${project.client} website`}
                 >

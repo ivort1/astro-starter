@@ -153,6 +153,14 @@ export const FAQS = [
     a: "Everything you need to have a professional website: custom design and development, up to 5 pages, hosting, domain connection, on-page SEO, Google Business profile optimization, and unlimited edits. There are no hidden fees and we handle everything for you.",
   },
   {
+    q: "Is there a minimum contract length for the monthly website subscription?",
+    a:"Yes, the monthly website subscription has a 12-month minimum commitment. After the first year, it switches to a month-to-month plan that can be canceled anytime without penalties."
+  },
+  {
+    q: "Can you explain how the 30-day trial period works?",
+    a: "If we can't deliver a website design that meets your expectations, we offer a full refund for the amount you've paid up to that point. Once the design is approved and the site is live, there is a 30-day trial period. If you cancel during this window, the contract will be voided, but you’ll still be responsible for any charges already incurred. After the 30-day trial, refunds are no longer available, and the annual subscription will continue until the end of the 12-month commitment. Essentially, if the site never goes live, you'll get a full refund. If the site goes live and you cancel within 30 days, you won't be charged for future months, but the initial $200 for the first month is non-refundable.",
+  },
+  {
     q: "How long does it take to build the site?",
     a: "From consultation to launch, our typical turnaround time is 3-6 weeks. This timeline includes design, development, testing, and revisions. The speed of completion largely depends on how quickly we receive your content, feedback, and approval."
   },
@@ -161,24 +169,12 @@ export const FAQS = [
     a: "You retain ownership of your domain, images, and assets provided to you. However, the website code is licensed for use only during an active subscription. If you cancel, access to the code will be revoked, but we will transfer the domain to you upon request."
   },
   {
-    q: "Can you explain how the 30-day trial period works?",
-    a: "If we can't deliver a website design that meets your expectations, we offer a full refund for the amount you've paid up to that point. Once the design is approved and the site is live, there is a 30-day trial period. If you cancel during this window, the contract will be voided, but you’ll still be responsible for any charges already incurred. After the 30-day trial, refunds are no longer available, and the annual subscription will continue until the end of the 12-month commitment. Essentially, if the site never goes live, you'll get a full refund. If the site goes live and you cancel within 30 days, you won't be charged for future months, but the initial $200 for the first month is non-refundable.",
+    q: "Can you redesign my existing website?",
+    a: "Yes. If you already have a site that's slow, outdated, or not converting, we'll rebuild it from the ground up. Same pricing applies.",
   },
   {
     q: "Why do you build custom-coded websites instead of using WordPress or drag-and-drop builders?",
     a: "We create custom-coded websites using HTML, CSS, and vanilla JavaScript to ensure superior performance, security, and SEO. Unlike WordPress or other page builders, our sites load faster, are easier to maintain, and have fewer security risks. This tailored approach also allows us to craft unique, lightweight, and high-performing websites specific to your brand."
-  },
-  {
-    q: "Do you only work with contractors?",
-    a: "Contractors are our specialty, but we work with any local service business — landscapers, cleaners, salons, auto shops, and more. If you rely on local customers finding you online, we can help.",
-  },
-  {
-    q: "Is there a minimum contract length for the monthly website subscription?",
-    a:"Yes, the monthly website subscription has a 12-month minimum commitment. After the first year, it switches to a month-to-month plan that can be canceled anytime without penalties."
-  },
-  {
-    q: "Can you redesign my existing website?",
-    a: "Yes. If you already have a site that's slow, outdated, or not converting, we'll rebuild it from the ground up. Same pricing applies.",
   },
 ];
 
@@ -198,38 +194,38 @@ export const SERVICE_OPTIONS = [
 // accentColor sets the card's top border and tag color for visual variety.
 export const PORTFOLIO = [
   {
-    client: "Harding Construction",
-    type: "General Contractor",
-    location: "Upland, CA",
-    url: "https://hardingconstruction.com",   // TODO: replace with live URL
-    description: "5-page site for a family-owned kitchen & bathroom remodeling contractor serving the Inland Empire.",
-    tags: ["Custom Design", "On-Page SEO", "Google Business"],
-    result: "Ranking page 1 for local remodeling keywords",
-    image: "",   // TODO: add screenshot path
+    client: "ET Fadezz",
+    type: "Private Barber",
+    location: "Fontana, CA",
+    url: "https://www.etfadezz.com",
+    description: "Custom website and logo for a private barber in Fontana, CA with online booking.",
+    tags: ["Custom Design", "Custom Logo", "Booking Integration"],
+    result: "Live and booking appointments within 2 weeks of first consultation.",
+    image: "/src/assets/clients/etfadezz.webp",
     accentColor: "#D95030",
   },
-  {
-    client: "Client Name",
-    type: "Roofing Contractor",
-    location: "City, CA",
-    url: "#",
-    description: "Placeholder — replace with real client details once a project is live.",
-    tags: ["Custom Design", "On-Page SEO", "Unlimited Edits"],
-    result: "Placeholder result",
-    image: "",
-    accentColor: "#2DD4BF",
-  },
-  {
-    client: "Client Name",
-    type: "HVAC Company",
-    location: "City, CA",
-    url: "#",
-    description: "Placeholder — replace with real client details once a project is live.",
-    tags: ["Custom Design", "Google Business", "Copywriting"],
-    result: "Placeholder result",
-    image: "",
-    accentColor: "#60A5FA",
-  },
+  // {
+  //   client: "Client Name",
+  //   type: "Roofing Contractor",
+  //   location: "City, CA",
+  //   url: "#",
+  //   description: "Placeholder — replace with real client details once a project is live.",
+  //   tags: ["Custom Design", "On-Page SEO", "Unlimited Edits"],
+  //   result: "Placeholder result",
+  //   image: "",
+  //   accentColor: "#2DD4BF",
+  // },
+  // {
+  //   client: "Client Name",
+  //   type: "HVAC Company",
+  //   location: "City, CA",
+  //   url: "#",
+  //   description: "Placeholder — replace with real client details once a project is live.",
+  //   tags: ["Custom Design", "Google Business", "Copywriting"],
+  //   result: "Placeholder result",
+  //   image: "",
+  //   accentColor: "#60A5FA",
+  // },
 ];
 
 // ─── WHY GCD / VALUE PROPS ───────────────────────────────────────────────
